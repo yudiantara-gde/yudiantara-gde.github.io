@@ -1,0 +1,216 @@
+//default size 40px
+.btn {
+    padding: 7px 16px;
+    margin: 0 0;
+    outline: none;
+    background-color: _color(grey);
+    border-radius: _rem(4);
+    border: solid 1px _color(grey);
+    box-shadow: none;
+    @include vendor('transition', 'background-color 0.15s ease-in-out, border-color 0.15s ease-in-out');
+    
+    font-family: _font(inter-medium);
+    font-size: _rem(16);
+    line-height: 24px;
+    text-decoration: none;
+    color: _color(black-soft);
+
+    span {
+        position: relative;
+        display: inline-block;
+        font-family: _font(inter-medium);
+        font-weight: _font(weight-500);
+        font-size: _em(16);
+        line-height: 24px;
+        letter-spacing: 0;
+        color: _color(black-soft);
+        text-transform: uppercase;
+        @include vendor('transition', 'color 0.15s ease-in-out');
+    }
+    
+    &:active,
+    &:hover,
+    &:focus,
+    &.active,
+    &:first-child:active {
+        color: _color(black-soft);
+        background-color: transparent;
+        background-image: none;
+        border-color: _color(grey);
+        box-shadow: none;
+        text-decoration: none;
+
+        span {
+            color: _color(black-soft);
+        }
+    }
+
+    &:active {
+        border-color: _color(grey) !important;
+    }
+
+    //size sett all padding
+    //size sm == 48px
+    //size md == 56px
+    //size lg == 64px
+    &.btn-sm,
+    &.btn-md,
+    &.btn-lg {
+        padding: 11px 16px;
+    }
+
+}
+
+@include media-breakpoint-up(md) {
+
+    .btn {
+
+        &.btn-md span,
+        &.btn-lg span {
+            line-height: 32px;
+            font-size: _em(18);
+        }
+    }
+
+}
+
+@include media-breakpoint-up(lg) {
+    
+    .btn {
+
+        &.btn-lg span {
+            line-height: 40px;
+            font-size: _em(20);
+        }
+    }
+}
+
+//button primary
+.btn.btn-primary {
+    background-color: _color(primary);
+
+    span {color: _color(white);}
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        border-color: _color(primary);
+        background-color: transparent;
+
+        span {color: _color(primary);}
+    }
+}
+
+//button green
+.btn.btn-green {
+    background-color: _color(green);
+
+    span {color: _color(white);}
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: _color(green);
+        background-color: transparent;
+
+        span {color: _color(green);}
+    }
+}
+
+//button red
+.btn.btn-red {
+    background-color: _color(red);
+
+    span {color: _color(white);}
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: _color(red);
+        background-color: transparent;
+
+        span {color: _color(red);}
+    }
+}
+
+//button blue
+.btn.btn-blue {
+    background-color: _color(blue);
+
+    span {color: _color(white);}
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: _color(blue);
+        background-color: transparent;
+
+        span {color: _color(blue);}
+    }
+}
+
+//button orange
+.btn.btn-orange {
+    background-color: _color(orange);
+
+    span {color: _color(white);}
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: _color(orange);
+        background-color: transparent;
+
+        span {color: _color(orange);}
+    }
+}
+
+//button yellow
+.btn.btn-yellow {
+    background-color: _color(yellow);
+
+    span {color: _color(white);}
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: _color(yellow);
+        background-color: transparent;
+
+        span {color: _color(yellow);}
+    }
+}
+
+//button teal
+.btn.btn-teal {
+    background-color: _color(teal);
+
+    span {color: _color(white);}
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: _color(teal);
+        background-color: transparent;
+
+        span {color: _color(teal);}
+    }
+}
+
+//button purple
+.btn.btn-purple {
+    background-color: _color(purple);
+
+    span {color: _color(white);}
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: _color(purple);
+        background-color: transparent;
+
+        span {color: _color(purple);}
+    }
+}
+

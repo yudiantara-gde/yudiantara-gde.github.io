@@ -1,0 +1,51 @@
+.works {
+    position: relative;
+
+    .wrp-works {
+        position: relative;
+        width: 100%;
+    }
+
+    .thumbs {
+        position: relative;
+        padding-top: calc((1/1) * 100%);
+
+        img {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .body {
+        position: relative;
+        padding: _rem(16) 0;
+
+        h3 {margin-bottom: _rem(8);}
+        p {
+            margin-bottom: 0;
+
+            a.lbl {
+                display: inline-block;
+                margin: 0 _rem(8) 0 0;
+                font-weight: _font(weight-500);
+                text-decoration: none;
+                font-family: _font(inter-medium);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            a.lbl.lbl-website {color: _color(green);}
+            a.lbl.lbl-ilustrator {color: _color(blue);}
+            a.lbl.lbl-apps {color: _color(teal);}
+            a.lbl.lbl-themes {color: _color(orange);}
+        }
+    }
+}

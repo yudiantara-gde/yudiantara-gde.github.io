@@ -1,0 +1,26 @@
+//general css
+.txt-left {text-align: left;}
+.txt-right {text-align: right;}
+.txt-center {text-align: center;}
+.txt-justify {text-align: justify;}
+.img-absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &.top {object-position: top;}
+    &.center {object-position: center;}
+    &.bottom {object-position: bottom;}
+}
+
+#wrapper {
+    padding-top: 62px;
+}
+
+@include media-breakpoint-up(lg) {
+
+    #wrapper {padding-top: 0;}
+}

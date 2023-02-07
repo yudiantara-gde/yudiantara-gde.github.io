@@ -1,0 +1,81 @@
+//colors
+$color : (
+    primary:    #3E7BFA,
+    red:        #FF5C5C,
+    green:      #39D98A,
+    blue:       #5B8DEF,
+    orange:     #FDAC42,
+    yellow:     #FDDD48,
+    teal:       #73DFE7,
+    purple:     #6600CC,
+    white:      #FFFFFF,
+    black-soft: #555770,
+    grey:       #F2F2F5,
+    black:      #28293D
+);
+
+//duration
+$duration: (
+    transition:         0.25s
+);
+
+//size
+$size: (
+    pxem:               16,
+    pxrem:              16,
+    xxsmall:            8,
+    xsmall:             16,
+    small:              32,
+    medium:             48,
+    large:              56,
+    xlarge:             64
+);
+
+//fonts
+$font: (
+    weight-300:         300,
+    weight-400:         400,
+    weight-500:         500,
+    weight-600:         600,
+    weight-700:         700,
+    weight-800:         800,
+    weight-900:         900,
+    inter:              ('Inter Regular', Helvetica, sans-serif),
+    inter-semi:         ('Inter Semi Bold', Helvetica, sans-serif),
+    inter-medium:       ('Inter Medium', Helvetica, sans-serif),
+    inter-bold:         ('Inter Bold', Helvetica, sans-serif),
+    fa-regular:         ('Font Awesome 6 Regular'),
+    fa-solid:           ('Font Awesome 6 Solid')
+);
+
+//path
+$path-fonts: "../fonts/";
+$path-img: "../images/";
+
+//button bootstrap
+$btn-active-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-box-shadow: unset;
+$btn-focus-width: 0;
+$btn-padding-x: 0;
+$btn-padding-y: 0;
+$btn-font-family: _font(inter-medium);
+$btn-font-size: _rem(15);
+$btn-font-weight: _font(weight-400);
+$btn-line-height: _rem(24);
+$btn-color: _color(black-soft);
+$btn-bg: transparent;
+$btn-border-width: 0;
+$btn-border-color: transparent;
+$btn-border-radius: _rem(4);
+$btn-disabled-opacity: 0.65;
+$btn-focus-box-shadow: unset;
+$enable-shadows: false;
+
+//font awesome
+$fa-display: inline-block !default;
+$fa-font-display: block !default;
+$fa-font-path: "assets/fonts" !default;
+
+$max-breakpoint: 1320;
+$wide-screen: "min-width: #{max-breakpoint}px";

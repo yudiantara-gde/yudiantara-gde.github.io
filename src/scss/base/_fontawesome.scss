@@ -1,0 +1,44 @@
+//import
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/functions';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/variables';
+
+//font awesome brand
+:root, :host {
+    --#{$fa-css-prefix}-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+    --#{$fa-css-prefix}-font-regular: normal 400 1em/1 "#{ $fa-style-family }";
+    --#{$fa-css-prefix}-font-solid: normal 900 1em/1 "#{ $fa-style-family }";
+}
+
+.fab,
+.#{$fa-css-prefix}-brands {
+    font-family: 'Font Awesome 6 Brands';
+    font-weight: 400;
+}
+
+@each $name, $icon in $fa-brand-icons {
+    .#{$fa-css-prefix}-#{$name}:before { content: unquote("\"#{ $icon }\""); }
+}
+  
+.far,
+.#{$fa-css-prefix}-regular {
+    font-family: 'Font Awesome 6 Regular';
+    font-weight: 400;
+}
+  
+.fas,
+.#{$fa-css-prefix}-solid {
+    font-family: 'Font Awesome 6 Solid';
+    font-weight: 900;
+}
+
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/mixins';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/core';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/sizing';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/fixed-width';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/list';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/bordered-pulled';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/animated';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/rotated-flipped';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/stacked';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/icons';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/screen-reader';

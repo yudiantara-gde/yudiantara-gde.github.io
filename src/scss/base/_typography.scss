@@ -1,0 +1,109 @@
+html,
+body {
+    font-family: _font(inter);
+    font-weight: _font(weight-400);
+    font-size: _em(16);
+    line-height: 1.5;
+    color: _color(black);
+    background-color: #f9f9f9;
+    margin: 0;
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: _font(inter-bold);
+    font-weight: _font(weight-400);
+    line-height: 1.2;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+h1, .h1 {font-size: _em(40);}
+h2, .h2 {font-size: _em(32);}    
+h3, .h3 {font-size: _em(28);}
+h4, .h4 {font-size: _em(24);}
+h5, .h5 {font-size: _em(20);}
+h6, .h6 {font-size: _em(16);}
+
+p {
+    font-family: _font(inter);
+    font-size: _em(16);
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: _color(black);
+    margin-bottom: _rem(30);
+
+    b {
+        font-family: _font(inter-bold);
+    }
+}
+
+p.semi,
+blockquote {
+    font-family: _font(inter-semi);
+}
+
+p.medium {
+    font-family: _font(inter-medium);
+}
+
+a {
+    @include vendor('transition', 'all #{_duration(transition)} ease-in-out');
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+strong, b {
+    font-family: _font(inter-bold);
+}
+
+em, i {
+    font-style: italic;
+}
+
+small,
+.text-small,
+.text-tiny {
+    font-family: _font(inter);
+    font-weight: _font(weight-400);
+}
+
+small,
+.text-small {
+    font-size: _em(12);
+    line-height: 1.5;
+}
+
+.text-tiny {
+    font-size: _em(10);
+    line-height: 1.5;
+}
+
+@include media-breakpoint-down(md) {
+
+    html {font-size: _em(14);}
+    h1 {font-size: _em(36);}
+    h2 {font-size: _em(32);} 
+    p {font-size: _em(15); margin-bottom: _rem(15);}
+    small,
+    .text-small,
+    .text-tiny {line-height: 1.5}
+}
+
+@include media-breakpoint-down(sm) {
+
+    h1 {font-size: _em(32);}
+    h2 {font-size: _em(28);}    
+    h3 {font-size: _em(24);}
+    h4 {font-size: _em(22);}
+}
+
+@include media-breakpoint-up(xs) {
+
+    h1 {font-size: _em(30);}
+}

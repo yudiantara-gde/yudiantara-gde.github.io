@@ -1,0 +1,21 @@
+.logo-text {
+    position: relative;
+
+    a {
+        display: inline-block;
+        width: 149px;
+        height: 34px;
+        outline: none;
+        text-decoration: none;
+        border: 0;
+    }}
+
+.logo-text.full-width {
+    width: 100%;}
+
+.logo-text.center {
+    text-align: center;
+
+    a {
+        margin: 0 0;
+    }}

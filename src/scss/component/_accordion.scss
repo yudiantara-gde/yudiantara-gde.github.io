@@ -1,0 +1,233 @@
+.accordion {
+    background-color: transparent;
+    border: 1px solid _color(grey);
+
+    .accordion-header ,
+    .accordion-button.collapsed {
+        color: _color(black-soft);
+        background-color: transparent;
+    }
+
+    .accordion-header {
+        padding: 0;
+        margin: 0;
+    }
+
+    .accordion-button {
+        padding: _rem(_size(xsmall)) _rem(calc(24 + _size(xsmall) + _size(xsmall))) _rem(_size(xsmall)) _rem(_size(xsmall));
+        margin: 0 0;
+        background-color: _color(grey);
+        border-radius: 0;
+        color: _color(blue);
+        outline: none;
+        box-shadow: none;
+    }
+
+    .accordion-button:after {
+        position: absolute;
+        top: 50%;
+        right: _rem(_size(xsmall));
+        width: 24px;
+        height: 24px;
+        margin-top: -12px;
+        font-family: _font(fa-solid);
+        content: "\f107";
+        color: _color(black-soft);
+        background-image: none;
+        font-size: _rem(18);
+        line-height: 24px;
+        text-align: center;
+    }
+
+    .accordion-button:focus {
+        border-color: _color(grey);
+        outline: none;
+        box-shadow: none;
+    }
+
+    .accordion-body {
+        padding: _rem(_size(xsmall));
+
+        p:last-of-type {margin-bottom: 0;}
+    }
+
+    @include media-breakpoint-down(md) {
+        .accordion-button {
+            padding: _rem(_size(xxsmall)) _rem(calc(24 + _size(xxsmall) + _size(xxsmall))) _rem(_size(xxsmall)) _rem(_size(xxsmall));
+        }
+    }
+}
+
+//accordion with icon font awesome
+.accordion.wi-right {
+
+    .accordion-button:after {display: none;}
+
+    .accordion-button .fa-regular,
+    .accordion-button .fa-solid {
+        width: _rem(24);
+        height: _rem(24);
+        position: absolute;
+        top: 50%;
+        right: _rem(_size(xsmall));
+        margin-top: _rem(-12);
+        display: block;
+        color: _color(black-soft);
+        font-size: _rem(18);
+        line-height: 24px;
+        text-align: center;
+        @include vendor('transition', 'transform .2s ease-in-out');
+        @include vendor('transform', 'rotate(-180deg)');
+    }
+
+    .accordion-button.collapsed .fa-regular,
+    .accordion-button.collapsed .fa-solid {
+        @include vendor('transition', 'transform .2s ease-in-out');
+        @include vendor('transform', 'rotate(0)');
+    }
+
+    .accordion-button .fa-regular.fa-plus,
+    .accordion-button .fa-solid.fa-plus {
+        @include vendor('transition', 'transform .2s ease-in-out');
+        @include vendor('transform', 'rotate(45deg)');
+    }  
+    
+    .accordion-button.collapsed .fa-regular.fa-regular,
+    .accordion-button.collapsed .fa-solid.fa-solid {
+        @include vendor('transition', 'transform .2s ease-in-out');
+        @include vendor('transform', 'rotate(0)');
+    }
+}
+
+//accordion custom
+.accordion.custom {
+    border: 0;
+
+    .accordion-item {
+        border: 1px solid;
+
+        .accordion-header ,
+        .accordion-button.collapsed {
+            color: _color(black);
+        }
+
+        .accordion-button {
+            padding-right: _rem(_size(xsmall));
+            padding-left: _rem(calc(24 + _size(xsmall) + _size(xsmall)));
+        }
+
+        .accordion-button:before {
+            position: absolute;
+            left: _rem(calc(24 + _size(xsmall) + _size(xsmall)));
+            bottom: 0;
+            width: calc(100% - (_rem(calc(24 + _size(xsmall) + _size(xsmall) + _size(xsmall)))));
+            height: 1px;
+            content: '';
+            display: block;
+            background-color: _color(white);
+            @include vendor('transition', 'background-color .2s ease-in-out');
+        }
+
+        .accordion-button.collapsed:before {
+            background-color: transparent;
+        }
+
+        .accordion-button:after {
+            right: auto;
+            left: _rem(_size(xsmall));
+            content: "\2b";
+        }
+    
+        .accordion-button:after {
+            @include vendor('transform', 'rotate(45deg)');
+        }
+    
+        .accordion-button.collapsed:after {
+            @include vendor('transform', 'rotate(0)');
+        }
+    
+        .accordion-body {
+            padding-left: _rem(calc(24 + _size(xsmall) + _size(xsmall)));
+        }
+    }
+
+    //colored
+    .accordion-item.blue {
+        border-color: rgba(_color(blue), .3);
+
+        .accordion-button,
+        .accordion-collapse {
+            background-color:rgba(_color(blue), .3);
+        }
+    }
+
+    .accordion-item.red {
+        border-color: rgba(_color(red), .3);
+        
+        .accordion-button,
+        .accordion-collapse {
+            background-color:rgba(_color(red), .3);
+        }
+    }
+
+    .accordion-item.green {
+        border-color: rgba(_color(green), .3);
+        
+        .accordion-button,
+        .accordion-collapse {
+            background-color:rgba(_color(green), .3);
+        }
+    }
+
+    .accordion-item.orange {
+        border-color: rgba(_color(orange), .3);
+        
+        .accordion-button,
+        .accordion-collapse {
+            background-color:rgba(_color(orange), .3);
+        }
+    }
+
+    .accordion-item.yellow {
+        border-color: rgba(_color(yellow), .3);
+        
+        .accordion-button,
+        .accordion-collapse {
+            background-color:rgba(_color(yellow), .3);
+        }
+    }
+
+    .accordion-item.teal {
+        border-color: rgba(_color(teal), .3);
+        
+        .accordion-button,
+        .accordion-collapse {
+            background-color:rgba(_color(teal), .3);
+        }
+    }
+
+    .accordion-item.purple {
+        border-color: rgba(_color(purple), .3);
+        
+        .accordion-button,
+        .accordion-collapse {
+            background-color:rgba(_color(purple), .3);
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .accordion-button {
+            padding-right: _rem(_size(xxsmall));
+            padding-left: _rem(calc(24 + _size(xxsmall) + _size(xxsmall)));
+        }
+
+        .accordion-button:before {
+            left: _rem(calc(24 + _size(xxsmall) + _size(xxsmall)));
+            width: calc(100% - _rem(calc(24 + _size(xxsmall) + _size(xxsmall) + _size(xxsmall))));
+        }
+
+        .accordion-body {
+            padding-left: _rem(calc(24 + _size(xxsmall) + _size(xxsmall)));
+        }
+    }
+}

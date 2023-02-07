@@ -1,0 +1,80 @@
+.form-control-plaintext {
+    padding: 7px 16px;
+    font-family: _font(inter);
+    font-size: _em(16);
+    line-height: 24px;
+    color: _color(black);
+    letter-spacing: 0;
+    background-color: _color(white);
+    border-radius: 0;
+    border: 1px solid _color(grey);
+    box-shadow: none;
+    border-radius: _rem(4);
+
+    &:focus {
+        color: _color(black);
+        border-color: rgba(_color(blue), 0.6);
+        background-color: _color(white);
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        font-family: _font(inter);
+        font-size: _em(16);
+        line-height: 24px;
+        color: _color(black-soft);
+    }
+
+    &:disabled {
+        background-color: _color(grey);
+        border-color: _color(grey);
+        color: _color(black-soft);
+    }
+
+    //with icon
+    &.form-control-left-icon {
+        padding-left: 40px;
+
+        span,
+        i {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 24px;
+            height: 240x;
+        }
+    }
+    
+    //size sett all padding
+    //size sm == 48px
+    //size md == 56px
+    //size lg == 64px
+    &.form-control-sm,
+    &.form-control-md,
+    &.form-control-lg {
+        padding: 11px 16px;
+    }
+}
+
+@include media-breakpoint-up(md) {
+
+    .form-control-plaintext {
+
+        &.form-control-md,
+        &.form-control-lg {
+            line-height: 32px;
+            font-size: _rem(18);
+        }
+    }
+
+}
+
+@include media-breakpoint-up(lg) {
+    .form-control-plaintext {
+
+        &.form-control-lg {
+            line-height: 40px;
+            font-size: _rem(20);
+        }
+    }
+}

@@ -1,0 +1,10 @@
+/// mixin get vw
+@mixin vw($size) {
+    
+    font-size: get-vw($size);
+
+    // prevent font size from getting to big
+    @media #{$wide-screen} {
+        font-size: $size;
+    }
+}
