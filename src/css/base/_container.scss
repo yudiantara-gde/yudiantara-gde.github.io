@@ -1,0 +1,52 @@
+.base-container {
+    @apply block w-[100%];
+    @apply mx-auto my-0 px-16 py-0;
+}
+
+.container,
+.container-fluid,
+.container-max-sm,
+.container-max-md,
+.container-max-lg,
+.container-max-xl,
+.contaier-max-xxl {
+    @extend .base-container;
+    @apply max-w-[100%];
+}
+
+@screen sm {
+    
+    .container-fluid,
+    .container-max-sm {
+        max-width: _container(sm);
+    }
+}
+
+@screen md {
+    
+    .base-container {@apply px-24;}
+
+    .container-fluid,
+    .container-max-md {max-width: _container(md);}
+}
+
+@screen lg {
+
+    .container-fluid,
+    .container-max-lg {max-width: _container(lg);}
+}
+
+@screen xl {
+    
+    .base-container {@apply px-32;}
+
+    .container-fluid,
+    .container-max-xl {max-width: _container(xl);}
+}
+
+@screen xxl {
+
+    .container,
+    .container-fluid,
+    .container-max-xxl {max-width: _container(xxl);}
+}

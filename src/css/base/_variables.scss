@@ -1,0 +1,111 @@
+//container
+$container: (
+    xs:     480px,
+    sm:     576px,
+    md:     768px,
+    lg:     992px,
+    xl:     1200px,
+    xxl:    1400px
+);
+
+//screen
+$screen: (
+    xxs: 0,
+    xs: 480px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+) !default;
+
+//size default
+$size : (
+    pxrem: 16px,
+    pxem: 16px
+);
+
+//color
+$color : (
+    brand-01: #254336,
+    brand-02: #6B8A7A,
+    brand-03: #B7B597,
+    brand-04: #DAD3BE,
+    message-alert: #FD2C55,
+    message-warning: #FFC300,
+    message-success-01: #00D764,
+    message-success-02: #0D6EFD,
+    text-white: #FFFFFF,
+    text-primary-01: #0E0D35,
+    text-primary-02: #27264A,
+    text-primary-03: #3E3D5D,
+    text-primary-04: #575672,
+    text-primary-05: #6E6E86,
+    text-primary-06: #868599,
+    text-primary-07: #9F9EAE,
+    text-primary-08: #B7B7C3,
+    text-primary-09: #CFCFD7,
+    text-primary-10: #E7E7EB,
+    text-sub-primary-01: #626C7A,
+    text-sub-primary-02: #707986,
+    text-sub-primary-03: #7D8591,
+    text-sub-primary-04: #8C939C,
+    text-sub-primary-05: #999FA7,
+    grey-pale: #F4F6F9,
+    grey-neutral: #F8F8F9,
+    red-light: #F15E75,
+    tael: #25F4EE,
+    blue-light: #E7F6FD,
+);
+
+//shadow
+$shadow : (
+    top: 0px 2px 10px 0px rgba(0, 0, 0, 0.3),
+    bottom : 0px -2px 10px 0px rgba(0, 0, 0, 0.3),
+    hover: 0px 2px 20px 0px rgba(0, 0, 0, 0.3),
+    wide: 0px 10px 40px 0px rgba(0, 0, 0, 0.3),
+    none: none,
+    primary: 0px 2px 10px 0 rgba(#254336, 0.3),
+);
+$shadow-default: 0px 2px 4px 0px rgba(0, 0, 0, 0.10), 0px -1px 1px 0px rgba(0, 0, 0, 0.2);
+
+//font
+$font-size-def: 16; //1rem or 16px
+$font-body : 'Montserrat', sans-serif;
+$font-heading: 'Poppins', sans-serif;
+$icon-regular: 'fa-regular';
+$icon-solid: 'fa-solid';
+$icon-brand: 'fa-brand';
+
+//prefix class name
+$prefix-class: fp-; //name prefix class and div
+
+//select 2 
+$remove-color: #888 !default;
+$remove-hover-color: #555 !default;
+$remove-width: 20px !default;
+
+$selection-color: #444 !default;
+$border-color: #aaa !default;
+$border-radius: 4px !default;
+$focus-border-color: #5897fb !default;
+$container-height: 28px !default;
+$selection-bg-top-color: white !default;
+$selection-bg-bottom-color: #eeeeee !default;
+$container-placeholder-color: #999 !default;
+$container-focus-border-color: blue !default;
+$selection-opened-bg-top-color: $selection-bg-bottom-color !default;
+$selection-opened-bg-bottom-color: $selection-bg-top-color !default;
+$dropdown-z-index: 1 !default;
+$dropdown-bg-color: $selection-bg-top-color !default;
+$results-max-height: 200px !default;
+$results-nested-padding: 20px !default;
+$results-choice-bg-hover-color: #3875d7 !default;
+$results-choice-fg-hover-color: white !default;
+$results-choice-fg-unselectable-color: grey !default;
+
+// Grid columns
+$grid-columns:                12 !default;
+$grid-gutter-width:           1.5rem !default;
+$grid-row-columns:            6 !default;
+

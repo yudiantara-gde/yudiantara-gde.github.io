@@ -1,0 +1,32 @@
+.spancer-xs {@apply py-24;}
+.spancer-xs-t-0 {@apply pt-0 pb-24;}
+.spancer-xs-b-0 {@apply pt-24 pb-0;}
+
+.spancer-sm {@apply py-32;}
+.spancer-sm-t-0 {@apply pt-0 pb-32;}
+.spancer-sm-b-0 {@apply pt-32 pb-0;}
+
+.spancer {@apply py-48;}
+.spancer-t-0 {@apply pt-0 pb-48;}
+.spancer-b-0 {@apply pt-48 pb-0;}
+
+@screen md {
+    .spancer-xs {@apply py-32;}
+    .spancer-xs-t-0 {@apply pb-32;}
+    .spancer-xs-b-0 {@apply pt-32;}
+
+    .spancer-sm {@apply py-48;}
+    .spancer-sm-t-0 {@apply pb-48;}
+    .spancer-sm-b-0 {@apply pt-48;}
+
+    .spancer {@apply py-56;}
+    .spancer-t-0 {@apply pb-56;}
+    .spancer-b-0 {@apply pt-56;}
+}
+
+@screen xl {
+
+    .spancer {@apply py-64;}
+    .spancer-t-0 {@apply pb-64;}
+    .spancer-b-0 {@apply pt-64;}
+}

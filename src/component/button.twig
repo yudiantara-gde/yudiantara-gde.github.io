@@ -1,0 +1,770 @@
+{# set for seo #}
+{% 
+    set seo = {
+        'title' : 'title here',
+        'meta_title' : 'meta title here',
+        'meta_description' : 'meta description here',
+        'meta_url': 'https://www.url.com'
+    }
+%}
+
+{# set class on #}
+{%
+    set _class = {
+        'body'  : 'pc-button',
+        'main'  : '',
+        'header': '',
+        'footer': '',
+    }
+%}
+
+{# set yes if packages load on pages #}
+{% 
+    set _cssjs = {
+        'swiper': '',
+        'swiper_type': [''],
+        'select2': '',
+        'gallery': '',
+        'pages': ['component.css'],
+    }
+%}
+
+{# set the layout template #}
+{% extends "../templates/layouts/component.twig" %}
+
+{# content #}
+{% block content %}
+    <section class="spancer">
+        <div class="container-max-xl">
+            <div class="py-48 px-24 rounded-16 md:py-56 md:px-32 md:rounded-24 xl:py-64 bg-gradient-shade">
+                <div class="{{ prefix_div }}-paragraph text-white text-left">
+                    <h1 class="h2">Button</h1>
+                    <p>Tombol memungkinkan pengguna mengambil tindakan dan membuat pilihan hanya dengan satu ketukan / sentuhan</p> 
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="spancer-t-0 component">
+        <div class="container-max-xl">
+            <div class="{{ prefix_div }}-paragraph text-primari-02 text-justify">
+                <p>Dalam desain sistem, tombol (button) adalah elemen antarmuka pengguna (UI) yang memungkinkan pengguna untuk melakukan tindakan atau perintah tertentu. Tombol adalah komponen penting dalam interaksi pengguna dengan sistem, dan desainnya harus mempertimbangkan kegunaan, aksesibilitas, dan estetika.</p>
+            </div>
+            <!-- button with size 48px-->
+            <div class="{{ prefix_div }}-paragraph text-primari-02 text-justify spancer-b-0">
+                <h2>Tombol dengan ukuran secara umum</h2>
+                <p>Tombol atau yang sering dikenal dengan sebutan button, secara umum mempunyai ukuran dengan tinggi 48px.</p>
+                <p>Ukuran 48px untuk tombol adalah rekomendasi yang kuat untuk memastikan aksesibilitas, kemudahan penggunaan, dan konsistensi dalam desain UI. Namun, selalu pertimbangkan konteks dan responsivitas desain untuk menciptakan pengalaman pengguna yang optimal.</p>
+                <div class="spancer-sm-b-0 column-grid grid-cols-1 gap-y-40 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-24 xl:gap-x-32">
+                    <div class="component-button">
+                        <span class="pos-abs">Button Filled</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--block btn--text-only">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-button">
+                        <span class="pos-abs">Button Outline</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--tertiary btn--block btn--text-only">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--tertiary btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--tertiary btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--tertiary btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--tertiary btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--tertiary btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-button">
+                        <span class="pos-abs">Button Ghost</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--ghost btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--ghost btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--ghost btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- button with small size -->
+            <div class="{{ prefix_div }}-paragraph text-primari-02 text-justify spancer-b-0">
+                <h2>Tombol dengan ukuran sangat kecil</h2>
+                <p>Tombol atau button yang berukuran sangat kecil, seperti yang berukuran 24 piksel (24px), adalah elemen antarmuka pengguna (UI) yang dirancang untuk menghemat ruang pada layar sambil tetap memberikan fungsionalitas tertentu. Ukuran 24px umumnya dianggap kecil, terutama jika dibandingkan dengan tombol standar yang biasanya berukuran lebih besar (misalnya, 40px ke atas)</p>
+                <p><b>24px</b> adalah ukuran yang relatif kecil untuk sebuah tombol, terutama jika digunakan pada layar dengan resolusi tinggi. Ukuran ini biasanya digunakan untuk ikon atau tombol yang tidak memerlukan teks panjang, seperti tombol close (tutup), minimize (perkecil), atau ikon tindakan sederhana.</p>
+                <p>Untuk penggunaan tombol berukuran kecil, sering digunakan sebagai icon atau link</p>
+                <div class="spancer-sm-b-0 column-grid grid-cols-1 gap-y-40 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-24 xl:gap-x-32">
+                    <div class="component-button">
+                        <span class="pos-abs">Button Ghost</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--xs btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--xs btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--xs btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--xs btn--ghost btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--xs btn--ghost btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--xs btn--ghost btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- button with size 40px -->
+            <div class="{{ prefix_div }}-paragraph text-primari-02 text-justify spancer-b-0">
+                <h2>Tombol dengan ukuran kecil</h2>
+                <p>Tombol atau button berukuran 40 piksel (40px) adalah elemen antarmuka pengguna (UI) yang lebih besar daripada tombol kecil (seperti 24px) dan umumnya dianggap sebagai ukuran yang lebih nyaman dan mudah digunakan, terutama untuk tindakan utama atau tombol yang memerlukan interaksi pengguna yang lebih sering.</p>
+                <p>Tombol berukuran 40px adalah ukuran yang seimbang antara fungsionalitas dan kemudahan penggunaan. Ukuran ini cocok untuk tombol utama atau tombol yang memerlukan interaksi pengguna yang sering. Desain yang jelas, teks yang singkat, dan pertimbangan aksesibilitas adalah kunci untuk membuat tombol 40px efektif dan ramah pengguna.</p>
+                <div class="spancer-sm-b-0 column-grid grid-cols-1 gap-y-40 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-24 xl:gap-x-32">
+                    <div class="component-button">
+                        <span class="pos-abs">Button Filled</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--sm btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--sm btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-button">
+                        <span class="pos-abs">Button Outline</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--tertiary btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--tertiary btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--tertiary btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--tertiary btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--sm btn--tertiary btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--sm btn--tertiary btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-button">
+                        <span class="pos-abs">Button Ghost</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--sm btn--ghost btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--sm btn--ghost btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--sm btn--ghost btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- button with size 56px -->
+            <div class="{{ prefix_div }}-paragraph text-primari-02 text-justify spancer-b-0">
+                <h2>Tombol dengan ukuran besar</h2>
+                <p>Tombol berukuran 56px adalah pilihan yang tepat untuk menonjolkan tindakan utama atau penting dalam sebuah antarmuka pengguna. Ukuran ini memberikan ruang yang cukup untuk teks dan ikon, sekaligus memastikan tombol mudah diklik dan dilihat oleh pengguna. Desain yang jelas, teks yang deskriptif, dan pertimbangan aksesibilitas adalah kunci untuk membuat tombol 56px efektif dan ramah pengguna.</p>
+                <div class="spancer-sm-b-0 column-grid grid-cols-1 gap-y-40 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-24 xl:gap-x-32">
+                    <div class="component-button">
+                        <span class="pos-abs">Button Filled</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--lg btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--lg btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-button">
+                        <span class="pos-abs">Button Outline</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--tertiary btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--tertiary btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--tertiary btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--tertiary btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--lg btn--tertiary btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--lg btn--tertiary btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-button">
+                        <span class="pos-abs">Button Ghost</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--ghost btn--block">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--lg btn--ghost btn--block" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--lg btn--ghost btn--icons-only">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--lg btn--ghost btn--icons-only ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- button primary -->
+            <div class="{{ prefix_div }}-paragraph text-primari-02 text-justify spancer-b-0">
+                <h2>Tombol dengan warna utama</h2>
+                <p>Tombol degan warna utama atau warna brand merupakan alat yang kuat didalam desain antarmuka pengguna. Mereka tidak hanya memperkuat identitas merek tetapi juga melambangkan suatu merek atau brand.</p>
+                <div class="spancer-sm-b-0 column-grid grid-cols-1 gap-y-40 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-24 xl:gap-x-32">
+                    <div class="component-button">
+                        <span class="pos-abs">Button Filled</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--block btn--text-only btn--primary">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--block btn--primary">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--block btn--primary">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--block btn--primary" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--icons-only btn--primary">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--icons-only btn--primary ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-button">
+                        <span class="pos-abs">Button Outline</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--tertiary btn--block btn--primary">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--tertiary btn--block btn--primary">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--tertiary btn--block btn--primary">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--tertiary btn--block btn--primary" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--tertiary btn--icons-only btn--primary">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--tertiary btn--icons-only btn--primary ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-button">
+                        <span class="pos-abs">Button Ghost</span>
+                        <div class="column-flex">
+                            <div class="cmp">
+                                <button class="btn btn--ghost btn--block btn--primary">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--ghost btn--block btn--primary">
+                                    <div class="btn-wrp justify-center flex-row-reverse">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-left"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--ghost btn--block btn--primary">
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                        <i class="fa font-faSolid fa--chevron-right"></i>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <button class="btn btn--ghost btn--block btn--primary" disabled>
+                                    <div class="btn-wrp justify-center">
+                                        <span>Button Text</span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="cmp">
+                                <div class="block text-center">
+                                    <button class="btn btn--ghost btn--icons-only btn--primary">
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                    <button class="btn btn--ghost btn--icons-only btn--primary ml-16" disabled>
+                                        <div class="btn-wrp justify-center">
+                                            <span>Button Text</span>
+                                            <i class="fa font-faSolid fa--house"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

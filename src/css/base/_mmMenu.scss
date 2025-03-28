@@ -1,0 +1,129 @@
+#menu:not( .mm-menu ) {display: none;}
+
+#mm-blocker,
+.mm-blocker {display: none !important;}
+.mm-slideout {
+    -webkit-transform: translate3d(0,0,0) !important;
+    transform: translate3d(0,0,0) !important;
+}
+
+.mm-wrapper.mm-wrapper--opened .mm-page {min-height: 100vh;}
+body.mm-wrapper.mm-wrapper--opened .header {
+
+    .hamburger-mobile {
+
+        .hamburger {
+            opacity: 0;
+            z-index: 0;
+        }
+
+        .hamburger-close {
+            opacity: 1;
+        }
+    }
+}
+
+.mm-menu {
+    width: 100%;
+    height: 0;
+    z-index: 2;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+    @include vendor('transition', '0.3s ease');
+
+    .mm-panels {
+        background-color: #ffffff;
+        height: auto;
+        border-color: transparent;
+    }
+
+    .mm-panel {
+        --mm-panel-parent-offset: 0;
+    }
+  
+    .mm-panel .mm-listview {
+
+        li {
+            padding-left: _rem(0);
+            padding-right: _rem(0);
+        }
+
+        li a.mm-listitem__text {
+            padding: - _rem(24);
+
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: _rem(14);
+            line-height: _rem(24);
+            letter-spacing: 0.4px;
+            color: #4c4c4c; 
+        }
+
+        li a.mm-btn.mm-btn--next {
+            position: absolute;
+            top: 0;
+            left: _rem(16);
+            width: calc(100% - 2rem);
+            height: 100%;
+
+            padding: 0;
+
+            border-left-width: 0px;
+            
+            &:after {
+                display: none;
+                width: 0;
+                height: 0;
+            }
+
+            &:before {
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                padding-top: _rem(24);
+                padding-bottom: _rem(24);
+
+                font-family: "FontAwesome";
+                font-size: _rem(16);
+                line-height: _rem(24);
+                text-align: center;
+                color: #4c4c4c;
+                font-style: normal;
+                content: '\f053';
+            }
+        }
+
+        li:after {
+            inset-inline-start: 1em;
+            inset-inline-end: 1em;
+            
+            border-color: #4c4c4c;
+        }
+    }
+
+    .mm-panel::after {display: none;}
+
+    #mm-1.mm-panel {
+
+        .mm-navbar {
+            display: none;
+        }
+    }
+}
+
+.mm-menu--opened {
+    top: 0;
+    height: 100%;
+
+    padding-top: 56px;
+
+    flex-wrap: nowrap;
+}

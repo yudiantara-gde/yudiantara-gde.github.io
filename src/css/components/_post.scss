@@ -1,0 +1,91 @@
+.#{$prefix-class}post-header {
+    @extend .container-max-lg;
+
+    h1 {
+        @apply text-primary-02 text-center;
+        @apply mb-16;
+    }
+
+    .#{$prefix-class}post-sparator {
+        @apply block w-[16px] h-[2px] bg-primary-02;
+        @apply mx-auto;
+    }
+}
+
+.#{$prefix-class}post-media {
+    @extend .container-max-xl;
+    @apply pt-32;
+
+    &.#{$prefix-class}post-media--on-top {
+    
+        .#{$prefix-class}media {margin-bottom: 0 !important;}
+    }
+}
+
+.#{$prefix-class}post-content {
+    @extend .container-max-lg;
+    @apply pt-32;
+
+    p:last-of-type {@apply mb-16;}
+}
+
+.#{$prefix-class}post-share {
+    @extend .container-max-lg;
+    @apply mt-24;
+
+    &__list {
+        @include clearfix;
+
+        li {@apply float-left ml-8;}
+
+        .#{$prefix-class}btn-share {
+            @apply bg-grey rounded-4 text-primary-01;
+            width: 40px;
+            height: 40px;
+            font-size: _rem(12);
+            line-height: _rem(12);
+            @include vendor('transition', 'color 0.2s ease-out, background-color 0.2s ease-out');
+
+            @include vendor('display', 'flex');
+            @apply justify-center items-center;
+        }
+
+        .#{$prefix-class}btn-share__icon {
+            @apply inline-block relative;
+            @apply text-primary-01;
+            font-size: _rem(14);
+            line-height: _rem(14);
+
+            &--x {
+                width: 14px;
+                height: 14px;
+                fill: currentColor;
+            }
+        }
+
+        &:first-of-type {@apply ml-0;}
+    }
+}
+
+
+@media screen and (min-width: _screen(md)) {
+    .#{$prefix-class}post-media {@apply pt-48;}
+    .#{$prefix-class}post-content {
+        @apply pt-48;
+        
+        p:last-of-type {@apply mb-24;}
+    }
+}
+
+@media screen and (min-width: _screen(xl)) {
+
+    .#{$prefix-class}post-content {
+
+        .#{$prefix-class}media.#{$prefix-class}media--wide {
+            @apply max-w-[122%] w-[122%];
+            @apply mx-[-11%];
+        }
+
+        p:last-of-type {@apply mb-32;}
+    }
+}

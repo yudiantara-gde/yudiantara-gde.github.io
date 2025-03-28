@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+
+        <title>{{ seo.meta_title }}</title>
+        <meta name="description" content="{{ seo.meta_description }}">
+
+        <link rel="shortcut icon" href="">
+        <link rel="apple-touch-icon" href="">
+        <link rel="image_src" href=""> 
+        <link rel="canonical" href="{{ meta_url }}" />
+        
+        <meta name="bingbot" content="noarchive">         
+        <meta property="og:type" content= "website" />
+        <meta property="og:url" content="{{ meta_url }}"/>
+        <meta property="og:site_name" content="{{ seo.meta_title }}" />
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="" />
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:domain" content="{{ seo.meta_url }}"/>
+        <meta name="twitter:title" property="og:title" itemprop="name" content="{{ seo.meta_title }}" />
+        <meta name="twitter:description" property="og:description" itemprop="description" content="{{ seo.meta_description }}" />
+        
+        {# menu mobile #}
+        <link rel="stylesheet" type="text/css" href="../third-party/mmenu/mmenu.css"/>
+
+        {# swiper #}
+        {% if _cssjs.swiper is defined and _cssjs.swiper is same as('yes') %}
+        <link rel="stylesheet" type="text/css" href="../third-party/swiper/swiper-bundle.min.css"/>
+        {% endif %}
+
+        {# popup gallery images / foto #}
+        {% if _cssjs.gallery is defined and _cssjs.gallery is same as('yes') %}
+        <link rel="stylesheet" type="text/css" href="../third-party/magnific-popup/magnific-popup.css"/>
+        {% endif %}
+
+        {# select 2 js #}
+        {% if _cssjs.select2 is defined and _cssjs.select2 is same as('yes') %}
+        <link rel="stylesheet" type="text/css" href="../third-party/select2/css/select2.css"/>
+        {% endif %}
+
+        {# main css #}
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        
+        {# css pages #}
+        {% if _cssjs.pages is defined %}
+            {% for css in _cssjs.pages %}
+                <link rel="stylesheet" type="text/css" href="../css/{{ css }}">
+            {% endfor %}
+        {% endif %}
+    </head>
+
+    <body class="{{ prefix_div }}-body {{ prefix_div }}-enabled-sticky-header {% if _class.body is defined %}{{ _class.body }}{% endif %}">
+        {# header #}
+        {% include "../includes/header-component.twig" %}
+
+        {# main #}
+        <div class="{{ prefix_div }}-main-body {% if _class.main is defined %}{{ _class.main }}{% endif %}">
+            {# block content #}
+            {% block content %}
+            
+            {% endblock %}
+        </div>
+
+        {# footer #}
+        {% include "../includes/footer.twig" %}
+
+        {# script #}
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <!-- superfish js -->
+        <!--
+        <script src="../third-party/superfish/js/hoverIntent.js"></script>
+        <script src="../third-party/superfish/js/superfish.js"></script>
+        -->
+        
+        {# swiper js #}
+        {% if _cssjs.swiper is defined and _cssjs.swiper is same as('yes') %}
+        <script src="../third-party/swiper/swiper-bundle.min.js"></script>
+            {% if _cssjs.swiper_type is defined %}
+                {% for swp in _cssjs.swiper_type %}
+                    {% if swp == 'heroes' %}
+                        <script>
+                            jQuery(document).ready(function($){
+                                function heroesSwiper() {
+                                    var heroesSlider = document.querySelectorAll('.heroes-wrp');
+                                    if(heroesSlider.length > 1) {
+                                        var heroesSwiper = new Swiper('.heroes .swiper', {
+                                            spaceBetween: 16,
+                                            loop: true,
+                                            watchOverflow: true,
+                                            autoplay: {
+                                                delay: 4000,
+                                            },
+                                            speed: 500,
+                                            navigation: {
+                                                nextEl: '.heroes .heroes-next',
+                                                prevEl: '.heroes .heroes-prev',
+                                            },
+                                            pagination: {
+                                                el: ".heroes .heroes-swiper-pagination",
+                                                clickable: true,
+                                            },
+                                            on: {
+                                                beforeInit() {
+                                                    const slides = this.el.querySelectorAll('.swiper-slide');
+
+                                                    if (slides) {
+                                                        this.params.loop = slides.length > 1;
+                                                        this.params.autoplay.enabled = slides.length > 1;
+                                                    }
+                                                },
+                                            },
+                                        });
+                                    }else {
+                                        $('.heroes').addClass('swiper-off');
+                                    }
+                                }
+
+                                heroesSwiper();
+                            });
+                        </script>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+        
+        <!-- mmMenu js -->
+        <script src="../third-party/mmenu/mmenu.js"></script>
+        
+        {# popup gallery / foto #}
+        {% if _cssjs.gallery is defined and _cssjs.gallery is same as('yes') %}
+        <script src="../third-party/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script>
+            jQuery(document).ready(function($){
+                $( 'a.popup-image' ).magnificPopup( {
+                    type: 'image',
+                    closeOnContentClick: true,
+                    closeMarkup: '<button title="%title%" type="button" class="mfp-close uwp-mfp-close-button"></button>',
+                    fixedContentPos: true,
+                    fixedBgPos: true,
+                    overflowY: 'auto',
+                    removalDelay: 300,
+                } );
+            });
+        </script>
+        {% endif %}
+        
+        {# select 2 js #}
+        {% if _cssjs.select2 is defined and _cssjs.select2 is same as('yes') %}
+        <script src="../third-party/select2/js/select2.min.js"></script>
+        <script>
+            jQuery(document).ready(function($){
+                $('.form-selects').select2({
+                    minimumResultsForSearch: -1
+                });
+            });
+        </script>
+        {% endif %}
+        
+        <!-- themes js -->
+        <script src="../js/scripts.js"></script>
+
+    </body>

@@ -1,0 +1,53 @@
+@import './base/functions';
+@import './base/vendors';
+@import "./base/mixin";
+
+.bg-gradient-brand {
+    background: rgb(37,67,54);
+    background: linear-gradient(159deg, rgba(37,67,54,1) 0%, rgba(64,190,125,1) 100%);
+}
+
+.bg-gradient-shade {
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+}
+
+//compont button
+.pc-button {
+    .component-button {
+        @apply block relative;
+        @apply border border-solid border-grey-150 rounded-8;
+        @apply p-24;
+
+        .pos-abs {
+            @apply block absolute top-[-14px] left-16;
+            @apply px-8;
+            @apply bg-white;
+            @apply font-500 text-primary-01;
+            font-size: _rem(14);
+            line-height: _rem(24);
+        }
+    }
+
+    @screen sm {
+
+        .component-button {
+
+            .column-flex {
+    
+                .cmp {width: 50%;}
+                .cmp:last-of-type {@apply w-full;}
+            }
+        }
+    }
+
+    @screen lg {
+
+        .component-button {
+
+            .column-flex {
+    
+                .cmp {@apply w-full;}
+            }
+        }
+    }
+}

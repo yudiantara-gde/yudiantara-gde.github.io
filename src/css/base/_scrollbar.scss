@@ -1,0 +1,60 @@
+.scrollbar-to-x {
+    @apply max-w-[100%];
+    @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;
+    @include vendor('transition', '0.3s ease');
+}
+
+.scrollbar-to-x::-webkit-scrollbar-track {
+    @apply rounded-[1.25rem] bg-primary-09;
+}
+
+.scrollbar-to-x::-webkit-scrollbar {
+    border-radius: _rem(20);
+
+    @apply w-8 h-10;
+    @apply bg-primary-09;
+}
+
+.scrollbar-to-x::-webkit-scrollbar-thumb {
+    border-radius: _rem(20);
+    @apply bg-sub-05;
+    
+}
+
+.scrollbar-to-y {
+    @apply overflow-y-auto overflow-x-hidden whitespace-normal;
+    @include vendor('transition', '0.3s ease');
+}
+
+.scrollbar-to-y::-webkit-scrollbar-track {
+    border-radius: _rem(20);
+    @apply bg-primary-09;
+}
+
+.scrollbar-to-y::-webkit-scrollbar {
+    border-radius: _rem(20);
+
+    @apply w-8 h-10;
+    @apply bg-primary-09;
+}
+
+.scrollbar-to-y::-webkit-scrollbar-thumb {
+    border-radius: _rem(20);
+    @apply bg-sub-05;
+}
+
+
+
+.scrollbar-to-x.scrollbar-to-x--bar-hide::-webkit-scrollbar-track,
+.scrollbar-to-x.scrollbar-to-x--bar-hide::-webkit-scrollbar,
+.scrollbar-to-x.scrollbar-to-x--bar-hide::-webkit-scrollbar-thumb,
+.scrollbar-to-y.scrollbar-to-y--bar-hide::-webkit-scrollbar-track,
+.scrollbar-to-y.scrollbar-to-y--bar-hide::-webkit-scrollbar,
+.scrollbar-to-y.scrollbar-to-y--bar-hide::-webkit-scrollbar-thumb {
+    @apply opacity-0 bg-transparent;
+}
+
+.scrollbar-to-x.scrollbar-to-x--bar-hide::-webkit-scrollbar,
+.scrollbar-to-y.scrollbar-to-y--bar-hide::-webkit-scrollbar {
+    height: 0 !important;
+}

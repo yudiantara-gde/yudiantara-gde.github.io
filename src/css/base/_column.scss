@@ -1,0 +1,63 @@
+.row {
+    @include make-row();
+    @apply justify-center items-center;
+
+    > * {
+      @include make-col-ready();
+    }
+}
+
+.column-flex,
+.column-row {
+    @extend .row;
+    @apply mx-[-0.5em] mt-[-1em];
+
+    > * {
+        @apply px-8 mt-16;
+    }
+}
+
+.column-grid {
+    @apply grid gap-16;
+}
+
+@screen sm {
+
+    .column-flex,
+    .column-row {
+        @apply mx-[-0.75em] mt-[-1.5em];
+
+        > * {
+            @apply px-12 mt-24;
+        }
+    }
+
+    .column-grid {
+        @apply gap-24;
+    }
+}
+
+@screen lg {
+
+    .column-flex,
+    .column-row {
+        @apply mx-[-1em] mt-[-2em];
+
+        > * {
+            @apply px-16 mt-32;
+        }
+    }
+
+    .column-grid {
+        @apply gap-32;
+    }
+
+    .column-row {
+
+        @apply mt-[-2em] mx-[-1em];
+    
+        > * {
+            @apply mt-32 px-16;
+        }
+    }
+}

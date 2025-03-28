@@ -1,0 +1,107 @@
+{
+    "prefix_div" : "fp",
+
+    "nav_main": [
+        {
+            "pages": "my work",
+            "links": "works.html",
+            "child": ""  
+        },
+        {
+            "pages": "get in touch",
+            "links": "contact.html",
+            "child": ""
+        }
+    ],
+
+    "nav_component": [
+        {
+            "pages": "Home",
+            "links": "index.html",
+            "child": ""
+        },
+        {
+            "pages": "Component",
+            "links": "#",
+            "child": [
+                {
+                    "pages": "Main",
+                    "links": "#",
+                    "child": [
+                        {
+                            "pages": "Header",
+                            "links": "component/header.html" 
+                        },
+                        {
+                            "pages": "Footer",
+                            "links": "component/footer.html" 
+                        }
+                    ]
+                },
+                {
+                   "pages": "Typography",
+                    "links": "./typography.html",
+                    "child": "" 
+                },
+                {
+                   "pages": "Space",
+                    "links": "./space.html",
+                    "child": "" 
+                },
+                {
+                    "pages": "Forms",
+                    "links": "#",
+                    "child": [
+                        {
+                            "pages": "Forms Input",
+                            "links": "./forms-input.html" 
+                        },
+                        {
+                            "pages": "Button",
+                            "links": "./button.html" 
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+
+    "projects": [
+        {
+            "name": "Team Website",
+            "publish" : "27 March 2025",
+            "show_on_home": "yes",
+            "thumbsnail": "sample-team-mockup.jpg",
+            "tags_": [
+                {
+                    "tags_name": "Website Design",
+                    "tags_slug": "website-design"
+                },
+                {
+                    "tags_name": "Webflow Development",
+                    "tags_slug": "Webflow-development"
+                },
+                {
+                    "tags_name": "Concept",
+                    "tags_slug": "concept"
+                }
+            ],
+            "description": "A full website design and build for a concept team collaboration platform. This website also includes a beautiful blog. I have built the website and the blog in Webflow which has one of the best CMS for blog hosting.",
+            "url": "#"
+        },
+        {
+            "name": "Chat App Website",
+            "publish" : "25 March 2025",
+            "show_on_home": "yes",
+            "thumbsnail": "sample-chat-app.jpg",
+            "tags_": [
+                {
+                    "tags_name": "Website Design",
+                    "tags_slug": "website-design"
+                }
+            ],
+            "description": "This is a homepage design and build for a concept project – a chat application. I have designed the page first then later built a responsive page in Webflow.",
+            "url": "chat-app-website.html"
+        }
+    ]
+}

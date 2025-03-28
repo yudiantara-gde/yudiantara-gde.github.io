@@ -1,0 +1,19 @@
+.no-scroll {
+    @apply overflow-hidden;
+}
+
+body.#{$prefix-class}enabled-sticky-header {
+
+    .#{$prefix-class}main-header {
+        @apply fixed w-full top-0 left-0;
+        @apply z-[99]
+    }
+
+    @screen lg {
+        @apply pt-[70px];
+    }
+}
+
+#__next {
+    @apply overflow-hidden bg-white;
+}

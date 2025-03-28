@@ -1,0 +1,87 @@
+.#{$prefix-class}heroes {
+    @apply relative w-full;
+    @apply p-16;
+
+    .#{$prefix-class}heroes-wrp {
+        @apply block w-full h-full;
+        @apply pt-48;
+
+        h1, p {@apply text-palette-text;}
+        h1 {font-size: _rem(25);}
+        p {
+            font-size: _rem(16);
+            line-height: _rem(26);
+
+            @apply mt-24 mb-48;
+        }
+    }
+
+    .#{$prefix-class}heroes-wrp.#{$prefix-class}heroes-pallate-01 {
+        @apply bg-palette-background;
+    }
+
+    @screen xxs {
+
+        .#{$prefix-class}heroes-wrp {
+
+            h1 {font-size: _rem(30);}
+        }
+        
+    }
+
+    @screen xs {
+
+        .#{$prefix-class}heroes-wrp {
+
+            h1 {font-size: _rem(42);}
+        }
+        
+    }
+
+    @screen sm {
+
+        .#{$prefix-class}heroes-wrp {
+
+            h1 {font-size: _rem(52);}
+        
+            p {
+                font-size: _rem(18);
+                line-height: 1.8;
+    
+                @apply mb-56;
+            }
+        }
+    }
+
+    @screen lg {
+
+        .#{$prefix-class}heroes-wrp {
+
+            h1 {font-size: _rem(48);}
+        
+            p {
+                font-size: _rem(20);
+                @apply mt-32;
+            }
+        }
+        
+    }
+
+    @screen xl {
+
+        .#{$prefix-class}heroes-wrp {
+
+            h1 {font-size: _rem(56);}
+        }
+    }
+
+    @screen xxl {
+
+        .#{$prefix-class}heroes-wrp {
+
+            p {
+                font-size: _rem(22);
+            }
+        }
+    }
+}

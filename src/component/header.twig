@@ -1,0 +1,48 @@
+{# set varible and send to templates #}
+{% 
+    set seo = {
+        'title' : 'Main Navigation | Component',
+        'meta_title' : 'Main Navigation | Component',
+        'meta_description' : 'The navigation component provides a user-friendly menu for seamless browsing across the website, featuring responsive design, dropdown options, and intuitive links to key pages.',
+        'meta_url': 'https://www.url.com'
+    }
+%}
+
+{# set the layout template #}
+{% extends "../templates/layouts/component.twig" %}
+
+{# content #}
+{% block content %}
+    <h1 class="visually-hidden">Main Navigation</h1>
+    <div class="grid grid-cols-1 gap-32 md:gap-48">
+        <div class="{{ prefix_div }}-component">
+            <div class="container">
+                <div class="{{ prefix_div }}-paragraph-sm text-primary-01 text-justify">
+                    <h2>Navigation Full Width</h2>
+                    <p>The full-width main navigation spans the entire width of the page, offering a streamlined and responsive menu that adapts to all screen sizes. It features clearly labeled links to key sections of the website, dropdown menus for organized content, and enhanced usability for both desktop and mobile users.</p>
+                    <p>This description emphasizes the full-width layout, responsiveness, and ease of use.</p>
+                </div>
+            </div>
+
+            <div class="mb-32 md:mb-48"></div>
+
+            <main class="{{ prefix_div }}-main-header {{ prefix_div }}-main-header--type-01">
+                <div class="container">
+                    <div class="{{ prefix_div }}-main-header__menu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="#" class="nav-link actice" aria-current="page">Homepage</a></li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Component</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-action">
+                                    <li><a href="">Header / Main Navigation</a></li>
+                                    <li><a href="">Typography</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+{% endblock %}

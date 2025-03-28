@@ -1,0 +1,379 @@
+//form label
+.forms-label {
+    @apply relative block w-[100%] box-border;
+    @apply mb-8;
+
+    @apply font-body font-500 text-16 leading-[24px] tracking-0.4 text-primary-01;
+    @include vendor('transition', '0.3s ease');
+
+    label {
+        @apply inline-block w-[auto];
+        @apply inherit-font inherit-size inherit-weight inherit-leading inherit-tracking;
+        @apply align-middle;
+        @include vendor('transition', '0.3s ease');
+    }
+
+    span {
+        @apply inline-block w-[auto];
+        @apply inherit-font inherit-size inherit-weight inherit-leading inherit-tracking text-red-light;
+        @apply align-middle;
+        @include vendor('transition', '0.3s ease');
+    }
+
+    .icons {
+        @apply block absolute top-0;
+        @apply text-sub-05;
+    }
+
+    &--left-icons {
+        @apply pl-32;
+
+        .icons {@apply left-0;}
+    }
+
+    &--right-icons {
+        @apply pr-32;
+
+        .icons {@apply right-0;}
+    }
+}
+
+//message
+.message {
+    @apply hidden w-[100%];
+    @apply mt-16 mb-0;
+    @apply font-body font-500 text-16 leading-[24px] tracking-0.4;
+}
+
+//form input
+.forms-control {
+    @apply block w-[100%] bg-grey-pale border-[1px] border-solid border-grey-pale box-border rounded-8 bg-clip-padding appearance-none outline-none;
+    @apply px-16 py-11;
+    @apply font-body font-400 text-16 leading-[24px] tracking-0.4 text-primary-01;
+    @include vendor('transition', '0.3s ease');
+    @include shadow(none);
+}
+
+.forms-control::-webkit-input-placeholder,
+.forms-control:-ms-input-placeholder 
+.forms-control::placeholder {
+    @apply text-grey-300;
+}
+
+.forms-control:hover {
+    @apply border-grey-300;
+}
+
+.forms-control:active,
+.forms-control:focus {
+    @apply bg-white border-grey-300;
+    @include shadow(none);
+}
+
+.forms-control:disabled {
+    @apply bg-grey-150 border-grey-150 text-grey-400;
+}
+
+.forms-control:disabled::-webkit-input-placeholder,
+.forms-control:disabled:-ms-input-placeholder 
+.forms-control:disabled::placeholder {
+    @apply text-grey-400;
+}
+
+//forms select
+.select2-container {
+    @apply block;
+    width: 100% !important;
+
+    .select2-selection {
+
+        &--single {
+            @apply bg-grey-pale border-[1px] border-solid border-grey-pale rounded-8;
+            @apply h-[48px];
+
+            .select2-selection__rendered {
+                @apply pl-16 pr-46 py-11;
+                @apply font-body font-400 text-16 leading-[24px] tracking-0.4 text-grey-300;
+                @include vendor('transition', '0.3s ease');
+            }
+
+            .select2-selection__arrow {
+                @apply top-[1px] h-[46px] w-[46px];
+                @apply border-l-[1px] border-solid border-grey-pale;
+
+            }
+
+            .select2-selection__arrow b {
+                @apply block w-[24px] h-[24px] ml-[-12px] mt-[-12px];
+                @apply border-transparent border-0;
+
+                @apply font-icons text-16 leading-[24px] font-400 tracking-default text-grey-300 text-center;
+                @include vendor('transition', '0.3s ease');
+
+                &:before {content: '\e805';}
+            }
+        }
+    }
+
+    &--focus,
+    &--above,
+    &--below {
+
+        .select2-selection {
+
+            &--single {
+                @apply border-grey-pale bg-grey-pale;
+
+                .select2-selection__rendered {@apply text-primary-01;}
+                .select2-selection__arrow {@apply border-grey-pale;}
+                .select2-selection__arrow b {@apply text-primary-01;}
+            }
+        }
+    }
+
+    &--open {
+
+        .select2-selection {
+
+            &--single {
+                @apply border-grey-300 bg-white;
+
+                .select2-selection__rendered {@apply text-primary-01;}
+
+                .select2-selection__arrow {@apply border-grey-300;}
+                
+                .select2-selection__arrow b {
+                    border-color: transparent !important;
+                    border-width: 0 !important;
+
+                    @apply text-primary-01;
+                    @include vendor('transform', 'rotate(180deg)');
+                }
+            }
+        }
+    }
+
+    &--disabled {
+
+        .select2-selection {
+
+            &--single {
+
+                @apply border-grey-150 bg-grey-150;
+                .select2-selection__rendered {@apply text-grey-400;}
+                .select2-selection__arrow {@apply border-grey-150;}
+                .select2-selection__arrow b {@apply text-grey-400;}
+            }
+        }
+    }
+    
+
+    .select2-dropdown {
+        @apply border-grey-300 overflow-hidden;
+        @apply rounded-8;
+
+        .select2-results__option {
+            @apply font-body text-16 leading-[24px] tracking-0.4 text-primary-01;
+
+            &--selectable {
+                @apply p-8;
+            }
+
+            &--selected,
+            &--highlighted {
+                @apply bg-grey-300;
+                @apply text-primary-01;
+            }
+
+            &:hover,
+            &:active {
+                @apply bg-grey-300 text-primary-01;
+            }
+        }
+
+        &--above {@apply rounded-b-0;}
+        &--below {@apply rounded-t-0;}
+    }
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {@apply bg-grey-300 text-primary-01;}
+
+//date time
+.tempus-dominus-widget {
+    @apply w-[100%] rounded-8 border-[1px] border-solid border-grey-300;
+    @apply p-16;
+    @include shadow(default);
+    @include vendor('transition', 'all 0.2s');
+
+    .date-container {
+        @apply font-body;
+
+        .calendar-header {@apply mb-16;}
+        .calendar-header .previous {@apply relative pl-0;}
+        .calendar-header .previous .fa-solid {
+            @apply inline-block w-[24px] h-[24px] align-middle;
+            @apply font-icons font-400 not-italic text-16 leading-[24px] text-center text-primary-01;
+
+            &:before {content: '\e806';}
+        }
+        .calendar-header .next {@apply relative pr-0;}
+        .calendar-header .next .fa-solid {
+            @apply inline-block w-[24px] h-[24px] align-middle;
+            @apply font-icons font-400 not-italic text-16 leading-[24px] text-center text-primary-01;
+
+            &:before {content: '\e807';}
+        }
+        .calendar-header .picker-switch {@apply inherit-font text-16 leading-[24px] tracking-1 font-600;}
+
+        .date-container {
+            @apply text-16 leading-[24px] tracking-0.4;
+
+            &-decades {
+
+                .decade,
+                .old {@apply font-500;}
+
+                .dacade {@apply text-primary-01;}
+                .old {@apply text-primary-08;}
+            }
+
+            &-years {
+
+                .year {@apply font-500 text-primary-01;}
+            }
+
+            &-months {
+
+                .month {@apply font-500 text-primary-01;}
+            }
+
+            &-days {
+
+                .dow {@include vendor('display', 'flex');}
+                .dow.no-highlight {@apply font-500 text-sub-05;}
+                .day.old,
+                .day.new {@apply font-400 text-primary-08;}
+                .day.day {@apply font-400 text-primary-01;}
+            }
+        }
+    }
+
+    &.light {
+        @apply bg-white text-primary-01;
+    }
+}
+
+.tempus-dominus-widget[data-popper-placement="top-start"] {@apply rounded-b-0;}
+.tempus-dominus-widget[data-popper-placement="bottom-start"] {@apply rounded-t-0;}
+
+//form input
+.forms-input {
+    @apply relative block w-[100%] box-border;
+
+    .icons {
+        @apply block absolute top-[50%] mt-[-12px];
+        @apply z-[2];
+    }
+
+    &--left-icons {
+
+        .icons {
+            @apply left-8;
+        }
+
+        .forms-control {
+            @apply pl-40;
+        }
+    }
+
+    &--right-icons {
+
+        .icons {
+            @apply right-8;
+        }
+
+        .forms-control {
+            @apply pr-40;
+        }
+    }
+
+    &.select-no-border {
+
+        .select2-container {
+        
+            .select2-selection {
+        
+                &--single {
+        
+                    .select2-selection__arrow {
+                        @apply border-l-[0px];
+                    }
+                }
+            }
+        }
+    }
+
+    &--has-disable {
+
+        .icons {@apply text-grey-400;}
+    }
+}
+
+//error
+.forms-wrp {
+
+    &--has-error {
+        .icons {@apply hidden;}
+        .message {@apply block text-message-alert;}
+        .forms-control {@apply border-message-alert;}
+        .forms-input:after {
+            @apply block absolute w-[24px] h-[24px] top-[50%] right-8 mt-[-12px] z-[2];
+            @apply font-icons font-400 not-italic text-16 leading-[24px] text-center text-message-alert;
+            content: '\e81b'
+        }
+    }
+
+    &--has-ok {
+        .icons {@apply hidden;}
+        .message {@apply block text-message-success-01;}
+        .forms-control {@apply border-message-success-01}
+        .forms-input:after {
+            @apply block absolute w-[24px] h-[24px] top-[50%] right-8 mt-[-12px] z-[2];
+            @apply font-icons font-400 not-italic text-16 leading-[24px] text-center text-message-success-01;
+            content: '\e826';
+        }
+    }
+}
+
+@screen lg {
+
+    .forms-control {
+        @apply border-[2px];
+        @apply py-10;
+    }
+
+
+    .select2-container {
+
+        .select2-selection {
+
+            &--single {
+                @apply border-[2px];
+
+                .select2-selection__rendered {
+                    @apply py-10;
+                }
+
+                .select2-selection__arrow {@apply border-l-2;}
+            }
+        }
+    }
+
+    .select2-dropdown {
+        @apply border-2;
+    }
+
+    .tempus-dominus-widget {
+        @apply border-2;
+    }
+}

@@ -1,0 +1,66 @@
+<header class="{{ prefix_div }}-main-header {{ prefix_div }}-main-header--type-01">
+    <div class="container-max-xl">
+        <div class="{{ prefix_div }}-main-header__menu">
+            <div class="{{ prefix_div }}-nav-left">
+                <div class="brand">
+                    <a href="">
+                        <img src="../img/logo/logo-brand.png" alt="logo" title="logo">
+                    </a>
+                </div>
+                <nav id="nav" class="hidden lg:block">
+                    <ul class="navbar justify-start">
+                        {% for nav  in nav_component %}
+                            <li>
+                                {% if nav.links !=''  %}
+                                    <a href="{{ nav.links }}"> {{ nav.pages }} </a>
+                                {% else %}
+                                    <a href="#"> {{ nav.pages }} </a>        
+                                {% endif %}
+
+                                {% if nav.child != '' %}
+                                    <ul>
+                                        {% for child in nav.child %}
+                                            <li>
+                                                <a href="{{ child.links }}">{{ child.pages }}</a>
+                                                
+                                                {% if child.child != '' %}
+                                                    <ul>
+                                                        {% for sub in child.child %}
+                                                            <li><a href="{{ sub.links }}">{{ sub.pages }}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="{{ prefix_div }}-nav-right">
+                <div class="nav-lang">
+                    <span class="nav-lang__btn">
+                        Indonesia
+                        <i class="fa fa--solid fa--chevron-down"></i>
+                    </span>
+                    <div class="nav-lang__content">
+                        <ul>
+                            <li><a href="">Indonesia</a></li>
+                            <li><a href="">English</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {#                 
+                <div class="nav-search">
+                    <span class="nav-search__btn">
+                        <i class="fa fa--solid fa--magnifying-glass"></i>
+                        <i class="fa fa--solid fa--xmark"></i>
+                    </span>
+                </div> #}
+            </div>
+        </div>
+    </div>
+</header>

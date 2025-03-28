@@ -1,0 +1,52 @@
+
+@use "sass:math";
+
+//set font here
+//font
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@font-face {
+  font-family: 'fa-brand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/fa/fa-brands-400.woff2") format("woff2"), url("../fonts/fa/fa-brands-400.ttf") format("truetype"); 
+}
+@font-face {
+  font-family: 'fa-regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/fa/fa-regular-400.woff2") format("woff2"), url("../fonts/fa/fa-regular-400.ttf") format("truetype"); 
+}
+@font-face {
+  font-family: 'fa-solid';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../fonts/fa/fa-solid-900.woff2") format("woff2"), url("../fonts/fa/fa-solid-900.ttf") format("truetype");
+}
+
+// use tailwind css
+@import "./tailwind";
+
+// the variable
+@import "./base/variables";
+
+//third party
+@import "../third-party/mmenu/mmenu.css";
+@import "../third-party/select2/css/select2.css";
+@import "../third-party/swiper/swiper-bundle.min.css";
+@import "../third-party/superfish/css/superfish.css";
+
+//base css
+@import "./base/base";
+
+//your component css
+@import "./components/components";
+
+//css footer and header
+@import "./utilities/utilities";
+
+//global css
+@import "./main";

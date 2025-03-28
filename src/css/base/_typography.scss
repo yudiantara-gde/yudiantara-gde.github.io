@@ -1,0 +1,548 @@
+body {
+    @apply font-body tracking-0.4 break-words overflow-x-hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 100%;
+
+    @apply bg-white;
+}
+
+a {
+    @include vendor('transition', '0.3s ease');
+    text-decoration: underline;
+}
+
+h1, .h1, .h1-light,
+h2, .h2, .h2-light,
+h3, .h3, .h3-light,
+h4, .h4, .h4-light,
+h5, .h5, .h5-light,
+h6, .h6, .h6-light {
+    line-height: 1.3;
+    letter-spacing: 1px;
+
+    @apply mb-0;
+
+    a {
+        @apply inherit-font inherit-weight inherit-size inherit-leading inherit-tracking inherit-align inherit-color;
+        @apply underline;
+    }
+
+    a.with-color {
+        @apply relative inline-block;
+        @apply font-400 text-palette-text no-underline;
+        @apply pr-4;
+
+        span {
+            @apply relative z-[2];
+            @apply inherit-font inherit-weight inherit-size inherit-leading inherit-tracking inherit-align inherit-color;
+        }
+
+        &:before {
+            @apply absolute bottom-0 right-0 w-full h-[60%] bg-palette-highlight;
+            content: '';
+        }
+    }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4, 
+h5, .h5,
+h6, .h6 {@apply font-heading font-400;}
+
+.h1-light,
+.h2-light,
+.h3-light,
+.h4-light,
+.h5-light,
+.h6-light {@apply font-body font-300;}
+  
+h1, .h1, .h1-light {font-size: _rem(32);}
+h2, .h2, .h2-light {font-size: _rem(28);}
+h3, .h3, .h3-light {font-size: _rem(24);}
+h4, .h4, .h4-light {font-size: _rem(22);}
+h5, .h5, .h5-light,
+h6, .h6, .h6-light {font-size: _rem(20);}
+
+.visually-hidden {
+    @apply absolute top-0 left-0 w-0 h-0;
+    @apply invisible;
+}
+
+ul, ol {
+    @apply p-0 m-0;
+    list-style: none;
+}
+
+.#{$prefix-class}heading-underline {
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+        
+        span {
+            @apply inline-block;
+            @apply inherit-font inherit-weight inherit-size inherit-leading inherit-tracking inherit-align inherit-color;
+            @apply underline;
+        }
+    }
+
+}
+
+.#{$prefix-class}paragraph,
+.#{$prefix-class}paragraph-sm,
+.#{$prefix-class}paragraph-lg {
+    @apply max-w-[100%];
+
+    //heading
+    h1, .h1, .h1-light,
+    h2, .h2, .h2-light,
+    h3, .h3, .h3-light,
+    h4, .h4, .h4-light,
+    h5, .h5, .h5-light,
+    h6, .h6, .h6-light {
+        @apply inherit-color inherit-align;
+        @apply mb-16;
+    }
+
+    //paragraph
+    p {
+        @apply inherit-font inherit-color inherit-align inherit-weight;
+        @apply mb-16;
+
+        b,
+        strong {@apply font-500;}
+      
+        i {@apply italic;}
+
+        a {
+            @apply font-500 inherit-leading inherit-tracking text-[#013996] underline;
+        }
+
+        a.with-color {
+            @apply relative inline-block;
+            @apply font-700 text-palette-text no-underline;
+            @apply pr-4;
+
+            span {
+                @apply relative z-[2];
+                @apply inherit-font inherit-weight inherit-size inherit-leading inherit-tracking inherit-align inherit-color;
+            }
+
+            &:before {
+                @apply absolute bottom-0 right-0 w-full h-[60%] bg-palette-highlight;
+                content: '';
+            }
+        }
+
+        br {@apply hidden;}
+    }
+
+    p:last-of-type {@apply mb-0;}
+
+    //list
+    ul,
+    ol {
+        @apply mb-16 pl-24;
+
+        li {@apply mb-8;}
+        li::marker {@apply inherit-font inherit-weight inherit-size inherit-leading inherit-tracking inherit-color;}
+        li:last-of-type {@apply mb-0;}
+    }   
+
+    ul li > ul,
+    ul li > ol,
+    ol li > ul,
+    ol li > ol {
+        @apply my-8 mb-16 pl-16;
+    }
+    
+    ol {list-style: decimal;}
+
+    //images
+    .#{$prefix-class}media {
+        @apply relative overflow-hidden;
+        @apply block w-[100%] max-w-[100%] h-[auto] mx-auto mb-16;
+
+        a {
+            @apply block w-[100%] h-[100%];
+            @apply text-transparent;
+        }
+
+        img {
+            @apply rounded-4 w-[100%] h-auto;
+            box-shadow: 0 15px 18px -15px rgba(32,32,37,0.25);
+        }
+
+        .#{$prefix-class}media-caption {
+            @apply w-[100%] z-[2] px-16;
+            @apply text-center font-500 tracking-0.4;
+            font-size: _rem(14);
+            line-height: _rem(24);
+        }
+
+        &.#{$prefix-class}media--caption-inside {
+
+            .#{$prefix-class}media-caption {
+                @apply absolute left-0 bottom-0;
+                @apply pt-32 pb-16;
+                @apply text-white;
+                @apply rounded-b-4;
+
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(12, 12, 14, 0)), color-stop(65%, rgba(12, 12, 14, 0.3)), color-stop(100%, rgba(12, 12, 14, 0.5)));
+                background: -webkit-linear-gradient(top, rgba(12, 12, 14, 0) 0%, rgba(12, 12, 14, 0.3) 65%, rgba(12, 12, 14, 0.5) 100%);
+                background: -moz-linear-gradient(top, rgba(12, 12, 14, 0) 0%, rgba(12, 12, 14, 0.3) 65%, rgba(12, 12, 14, 0.5) 100%);
+                background: -ms-linear-gradient(top, rgba(12, 12, 14, 0) 0%, rgba(12, 12, 14, 0.3) 65%, rgba(12, 12, 14, 0.5) 100%);
+                background: -o-linear-gradient(top, rgba(12, 12, 14, 0) 0%, rgba(12, 12, 14, 0.3) 65%, rgba(12, 12, 14, 0.5) 100%);
+                background: linear-gradient(to bottom, rgba(12, 12, 14, 0) 0%, rgba(12, 12, 14, 0.3) 65%, rgba(12, 12, 14, 0.5) 100%);
+            }
+        }
+
+        &.#{$prefix-class}media--caption-bottom {
+
+            .#{$prefix-class}media-caption {
+                @apply relative pt-16 px-16;
+                @apply text-primary-02;
+                font-size: _rem(12);
+                line-height: _rem(22);
+            }
+        }
+    }
+
+    .#{$prefix-class}gallery {
+        @include vendor('display', 'flex');
+        @extend .row;
+        @apply mx-[-0.5rem] mt-[-1rem];
+
+        .#{$prefix-class}media {
+            @apply w-[100%];
+
+            a {
+                @apply h-[225px];
+            }
+
+            img {
+                @apply h-[100%] object-cover object-[center];
+            }
+        }
+
+        .#{$prefix-class}media-caption {@apply hidden;}
+
+        .#{$prefix-class}media.uwp-media--caption-inside {
+
+            .#{$prefix-class}media-caption {
+                @apply block w-[calc(100%_-_1rem)];
+                @apply left-8;
+            }
+        }
+
+        > * {
+            @apply px-8 mt-16;
+            margin-bottom: 0 !important;
+        }
+    }
+
+    //blockquote
+    blockquote,
+    .#{$prefix-class}block-quote {
+        @apply relative block max-w-full;
+        @apply border-none;
+        @apply mx-0 mt-0 mb-16;
+        @apply break-words box-border;
+
+        p {
+            margin-bottom: 0 !important;
+            @apply font-500 italic;
+        }
+        span {
+            @apply relative block mt-8;
+            @apply inherit-color inherit-tracking font-500;
+        }
+
+        &::before {
+            @apply absolute top-0 left-0;
+            @apply font-yeseva text-left not-italic;
+            content: '\201c';
+            letter-spacing: 1.5px;
+        }
+    }
+}
+
+.#{$prefix-class}paragraph {
+    p,
+    ul li,
+    ol li {
+        font-size: _rem(16);
+        line-height: 1.8;
+    }
+
+    blockquote,
+    .#{$prefix-class}block-quote {
+        @apply pl-40;
+
+        p {
+            font-size: _rem(17);
+        }
+
+        span {
+            font-size: _rem(14);
+        }
+
+        &:before {
+            width: 40px;
+            font-size: _rem(56);
+            line-height: _rem(56);
+        }
+    }
+}
+
+.#{$prefix-class}paragraph-sm {
+    p,
+    ul li,
+    ol li {
+        font-size: _rem(14);
+        line-height: 1.8;
+    }
+
+    blockquote,
+    .#{$prefix-class}block-quote {
+        @apply pl-32;
+
+        p {
+            font-size: _rem(15);
+        }
+
+        span {
+            font-size: _rem(14);
+        }
+
+        &:before {
+            width: 32px;
+            font-size: _rem(48);
+            line-height: _rem(48);
+        }
+    }
+}
+
+.#{$prefix-class}paragraph-lg {
+    p,
+    ul li,
+    ol li {
+        font-size: _rem(18);
+        line-height: 1.8;
+    }
+
+    blockquote,
+    .#{$prefix-class}block-quote {
+        @apply pl-48;
+
+        p {
+            font-size: _rem(19);
+        }
+
+        span {
+            font-size: _rem(16);
+        }
+
+        &:before {
+            width: 48px;
+            font-size: _rem(64);
+            line-height: _rem(64);
+        }
+    }
+}
+  
+@media screen and (min-width: _screen(sm)) {
+
+    h1, .h1, .h1-light {font-size: _rem(40);}
+    h2, .h2, .h2-light {font-size: _rem(32);}
+    h3, .h3, .h3-light {font-size: _rem(28);}
+    h4, .h4, .h4-light {font-size: _rem(24);}
+}
+  
+@media screen and (min-width: _screen(md)) {
+    
+    h1, .h1, .h1-light {font-size: _rem(48);}
+    h2, .h2, .h2-light {font-size: _rem(40);}
+    h3, .h3, .h3-light {font-size: _rem(32);}
+    h4, .h4, .h4-light {font-size: _rem(24);}
+    h5, .h5, .h5-light,
+    h6, .h6, .h6-light {font-size: _rem(22);}
+
+    .#{$prefix-class}paragraph,
+    .#{$prefix-class}paragraph-sm,
+    .#{$prefix-class}paragraph-lg {
+
+        h1, .h1, .h1-light,
+        h2, .h2, .h2-light,
+        h3, .h3, .h3-light,
+        h4, .h4, .h4-light,
+        h5, .h5, .h5-light,
+        h6, .h6, .h6-light {@apply mb-24;}
+
+        p,
+        ul,
+        ol,
+        .#{$prefix-class}media,
+        blockquote,
+        .#{$prefix-class}block-quote {@apply mb-24;}
+
+        blockquote span,
+        .#{$prefix-class}block-quote span {@apply mt-16;}
+
+        ul,
+        ol {
+            li {@apply mb-16;}
+        }   
+
+        ul li > ul,
+        ul li > ol,
+        ol li > ul,
+        ol li > ol {
+            @apply my-16;
+        }
+
+        .#{$prefix-class}gallery {
+            @apply justify-center items-center;
+    
+            .#{$prefix-class}media {
+                @apply w-[50%];
+            }
+
+            .#{$prefix-class}media:last-of-type {@apply w-[100%];}
+        }
+    }
+    
+    .#{$prefix-class}paragraph {
+        p,
+        ul li,
+        ol li {
+            font-size: _rem(18);
+        }
+
+        blockquote,
+        .#{$prefix-class}block-quote {
+            @apply pl-48;
+    
+            p {
+                font-size: _rem(20);
+            }
+    
+            span {
+                font-size: _rem(16);
+            }
+    
+            &:before {
+                width: 48px;
+                font-size: _rem(64);
+                line-height: _rem(64);
+            }
+        }
+    }
+    
+    .#{$prefix-class}paragraph-sm {
+        p,
+        ul li,
+        ol li {
+            font-size: _rem(16);
+        }
+
+        blockquote,
+        .#{$prefix-class}block-quote {
+            @apply pl-40;
+
+            p {
+                font-size: _rem(18);
+            }
+
+            span {
+                font-size: _rem(16);
+            }
+
+            &:before {
+                width: 40px;
+                font-size: _rem(56);
+                line-height: _rem(56);
+            }
+        }
+    }
+    
+    .#{$prefix-class}paragraph-lg {
+        p,
+        ul li,
+        ol li {
+            font-size: _rem(20);
+        }
+
+        blockquote,
+        .#{$prefix-class}block-quote {
+            @apply pl-56;
+    
+            p {
+                font-size: _rem(22);
+            }
+    
+            span {
+                font-size: _rem(18);
+            }
+    
+            &:before {
+                width: 56px;
+                font-size: _rem(72);
+                line-height: _rem(72);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: _screen(lg)) {
+    h1, .h1, .h1-light {font-size: _rem(56);}
+    h2, .h2, .h2-light {font-size: _rem(48);}
+
+    .#{$prefix-class}paragraph,
+    .#{$prefix-class}paragraph-sm,
+    .#{$prefix-class}paragraph-lg {
+
+        .#{$prefix-class}gallery {
+    
+            .#{$prefix-class}media {
+                @apply w-[33.33%];
+            }
+
+            .#{$prefix-class}media:last-of-type {@apply w-[33.33%];}
+        }
+    }
+}
+
+@media screen and (min-width: _screen(xxl)) {
+    h3, .h3, .h3-light {font-size: _rem(40);}
+    h4, .h4, .h4-light {font-size: _rem(32);}
+    h5, .h5, .h5-light,
+    h6, .h6, .h6-light {font-size: _rem(24);}
+
+    .#{$prefix-class}paragraph,
+    .#{$prefix-class}paragraph-sm,
+    .#{$prefix-class}paragraph-lg {
+
+        p,
+        ul,
+        ol,
+        .#{$prefix-class}media,
+        blockquote,
+        .#{$prefix-class}block-quote {@apply mb-32;}
+        
+        .#{$prefix-class}gallery {
+            @apply mt-[-2rem];
+    
+            .#{$prefix-class}media {
+                @apply w-[33.33%] mt-32;
+            }
+        }
+    }
+}
+  

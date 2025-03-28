@@ -1,0 +1,76 @@
+.card-works {
+    @apply block bg-white;
+
+    .label {
+        @apply inline-block w-auto;
+        font-size: _rem(12);
+        line-height: _rem(22);
+        letter-spacing: 2px;
+        @apply font-600 text-grey-600 uppercase;
+    }
+
+    h2,
+    h3 {
+        @apply block;
+        @apply text-palette-text;
+    }
+
+    .card-tags {
+        @apply flex flex-wrap flex-row gap-x-16 gap-y-8 items-center justify-start;
+
+        span {
+            @apply inline-block w-auto bg-palette-background;
+            @apply py-6 px-10;
+            font-size: _rem(12);
+            line-height: _rem(22);
+            @apply font-600 tracking-0.4 text-palette-text;
+        }
+    }
+
+    .card-wrp {
+        @apply flex flex-col w-full h-full;
+    }
+
+    .card-body,
+    .card-thumbsnail {
+        @apply w-full;
+    }
+
+    .card-body {
+        @apply flex flex-wrap flex-col items-start;
+    }
+
+    .card-thumbsnail {
+
+        a {
+            @apply block w-full h-full;
+            @apply text-transparent border-0 outline-none;
+        }
+
+        img {
+            @apply block w-full h-auto;
+        }
+    }
+
+    @screen md {
+        .label {font-size: _rem(14); line-height: _rem(24);}
+        .card-tags {
+    
+            span {
+                font-size: _rem(14);
+                line-height: _rem(24);
+            }
+        }
+        .card-wrp {@apply flex-row gap-x-32;}
+    }
+}
+
+.card-works:nth-child(even) {
+    
+    @screen md {
+
+        .card-wrp {@apply flex-row-reverse;}
+        .card-body {@apply items-end;}
+        .card-information {text-align: right !important;}
+    }
+}

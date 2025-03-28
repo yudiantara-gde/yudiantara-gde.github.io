@@ -1,0 +1,77 @@
+@use 'sass:math';
+
+/// Gets a value from a map.
+@function val($map, $keys...) {
+
+	@if nth($keys, 1) == null {
+		$keys: remove-nth($keys, 1);
+	}
+
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+
+	@return $map;
+}
+
+/// Gets a value from variable container.
+/// how to use: _container(value_of_varibel)
+@function _container($keys...) {
+	@return val($container, $keys...);
+}
+
+/// Gets a value from variable color.
+/// how to use: _color(value_of_varibel)
+@function _color($keys...) {
+	@return val($color, $keys...);
+}
+
+/// Gets a value from variable screen.
+/// how to use: _screen(value_of_varibel)
+@function _screen($keys...) {
+	@return val($screen, $keys...);
+}
+
+/// Gets a value from variable shadow.
+/// how to use: _shadow(value_of_varibel)
+@function _shadow($keys...) {
+	@return val($shadow, $keys...);
+}
+
+///box shadow
+@mixin shadow($val) {
+	box-shadow: $val;
+    -webkit-box-shadow: $val;
+}
+
+/// mixin text clamp
+/// how to use: clamp(1, 24px)
+@mixin clamp($line, $lh) {
+
+  line-height: $lh;
+
+  min-height: calc($line * $lh);
+  max-height: calc($line * $lh);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+/// strip number, remove px
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+	 	@return math.div($number, ($number * 0 + 1));
+	}
+	
+	@return $number;
+}
+
+/// convert px to rem
+@function _rem($pixels) {
+	$pixels: strip-unit($pixels);
+	@return calc(($pixels * 0.0625) * 1rem);
+}

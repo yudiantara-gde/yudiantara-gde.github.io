@@ -1,0 +1,360 @@
+.btn {
+    @apply inline-block w-auto;
+    @apply bg-grey-400 border-2 border-solid border-grey-400 overflow-hidden no-outline rounded-8;
+    @apply my-0 mx-auto py-10 px-16;
+    @apply select-none shadow-none cursor-default box-border;
+
+    @apply font-body font-600 text-primary-01 no-decoration tracking-1;    
+    font-size: _rem(16);
+    line-height: _rem(24);
+
+    transition: all 0.3s linear;
+
+    .btn-wrp {
+        @apply relative flex flex-nowrap items-center gap-x-8;
+        transition: all 300ms ease-out;
+
+        &:after {
+            @apply bg-white;
+
+            content: "";
+            height: 155px;
+            left: -155px;
+            opacity: .2;
+            position: absolute;
+            top: -50px;
+            transform: rotate(35deg);
+            transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+            width: 50px;
+            z-index: 2;
+        }
+    }
+
+    span {
+        @apply inherit-font inherit-size inherit-weight inherit-leading inherit-tracking inherit-color whitespace-normal;
+        transition-timing-function:ease;
+        transition-duration: 0.3s;
+    }
+
+    i {
+        @apply w-[24px] h-[24px];
+        font-size: _rem(16);
+        line-height: _rem(24);
+        @apply text-center inherit-color;
+        transition-timing-function:ease;
+        transition-duration: 0.3s;
+    }
+}
+
+.btn:hover {
+    @apply bg-grey-300 border-grey-300 cursor-pointer;
+    @apply text-primary-01;
+
+    span,
+    i {transition-property: color;}
+
+    .btn-wrp {@apply gap-x-16;}
+    .btn-wrp:after {
+        left: calc(100% + 155px);
+        transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+  
+.btn:active,
+.btn:focus {@apply border-message-success-02;}
+
+.btn:disabled,
+.btn.disabled {
+    @apply border-grey-300 bg-grey-300 text-grey-400;
+
+    &:hover {
+        .btn-wrp:after {@apply hidden;}
+    }
+}
+
+.btn:disabled:active,
+.btn.disabled:active,
+.btn:disabled:focus,
+.btn.disabled:focus {@include shadow(_shadow(none));}
+
+///button icons only
+.btn.btn-icons-only {
+    @apply px-10 py-10;
+    
+    span {@apply hidden;}
+}
+
+///button text- only
+.btn.btn-text-only {
+
+    i {@apply hidden;}
+
+    &:hover {
+        letter-spacing: 1.5px;
+    }
+}
+
+///button display
+.btn.btn-block {@apply block w-[100%];}
+
+//button terriary
+.btn.btn-tertiary {
+    @apply bg-transparent border-grey-800 text-grey-800;
+
+    .btn-wrp:after {@apply hidden;}
+}
+
+.btn.btn-tertiary:hover {
+    @apply bg-transparent border-primary-01;
+    @apply text-primary-01;
+}
+
+.btn.btn-tertiary:active,
+.btn.btn-tertiary:focus {@apply border-message-success-02;}
+
+.btn.btn-tertiary:disabled,
+.btn.btn-tertiary.disabled {@apply bg-transparent border-grey-300 text-grey-400;}
+
+//button ghost
+.btn.btn-ghost {
+    @apply bg-transparent border-transparent;
+    @apply text-primary-01;
+}
+
+.btn.btn-ghost:hover {
+    @apply bg-transparent border-transparent;
+    @apply text-message-success-02 tracking-1;
+
+    .btn-wrp {@apply gap-x-8;}
+
+    span {@apply underline;}
+    i {@apply no-underline;}
+}
+.btn.btn-ghost:active,
+.btn.btn-ghost:focus {
+    @apply text-message-success-02;
+
+    span {@apply underline;}
+    i {@apply no-underline;}
+}
+
+.btn.btn-ghost:disabled,
+.btn.btn-ghost.disabled {
+    @apply bg-transparent border-transparent text-grey-400;
+}
+
+.btn.btn-ghost:disabled:hover,
+.btn.btn-ghost.disabled:hover,
+.btn.btn-ghost:disabled:active,
+.btn.btn-ghost.disabled:active,
+.btn.btn-ghost:disabled:focus,
+.btn.btn-ghost.disabled:focus {
+    span {@apply no-underline;}
+}
+
+//button size
+.btn.btn-xs {
+    @apply py-0;
+    font-size: _rem(14);
+
+    &.btn--icons-only {
+        @apply px-0 py-0;
+    }
+}
+
+.btn.btn-sm {
+    @apply py-6;
+
+    &.btn--icons-only {@apply p-6;}
+}
+
+.btn.btn-lg {
+    @apply py-10 px-24;
+    font-size: _rem(18);
+    line-height: _rem(32);
+
+    i {
+        @apply w-[32px] h-[32px];
+        font-size: _rem(24);
+        line-height: _rem(32);
+    }
+
+    &.btn--icons-only {@apply py-10 px-10;}
+}
+
+//btn-primary
+.btn.btn--primary {
+    @apply bg-brand-1 border-brand-1;
+    @apply text-white;
+
+    &:hover {@apply bg-brand-1 border-brand-1 text-white;}
+    
+    &:active,
+    &:focus {@include shadow(_shadow(primary));}
+
+    &:disabled,
+    &.disabled {@apply border-grey-300 bg-grey-300 text-grey-400;}
+
+    &:disabled:active,
+    &.disabled:active,
+    &:disabled:focus,
+    &.disabled:focus {@apply no-shadow;}
+
+    &.btn--tertiary {
+        @apply bg-transparent border-brand-1 text-brand-1;
+    
+        &:hover {@apply bg-transparent border-brand-1 text-brand-1;}
+    
+        &:active,
+        &:focus {box-shadow: none;}
+    
+        &:disabled,
+        &.disabled {@apply bg-transparent border-grey-300 text-grey-400;}
+    
+        &:disabled:active,
+        &.disabled:active,
+        &:disabled:focus,
+        &.disabled:focus {box-shadow: none;}
+    }
+
+    &.btn--ghost {
+        @apply bg-transparent border-transparent;
+        @apply text-brand-1;
+    
+        &:hover,
+        &:active,
+        &:focus {
+            @apply bg-transparent border-transparent;
+            @apply text-brand-1;
+        }
+    
+        &:active,
+        &:focus {
+            box-shadow: none;
+        }
+    
+        &:disabled,
+        &.disabled {
+            @apply bg-transparent border-transparent text-grey-400;
+        }
+    
+        &:disabled:hover,
+        &.disabled:hover,
+        &:disabled:active,
+        &.disabled:active,
+        &:disabled:focus,
+        &.disabled:focus {
+            
+            span {@apply no-underline;}
+        }
+    }
+}
+
+//btn-secondary
+.btn.btn--secondary {
+    @apply bg-brand-2 border-brand-2;
+    @apply text-white;
+
+    //hover
+    &:hover,
+    &:active,
+    &:focus  {
+        @apply bg-white border-brand-2;
+        @apply text-brand-2;
+    }
+    
+    &:active,
+    &:focus {
+
+        -webkit-box-shadow: 0px 4px 20px 0px rgba(37, 67, 54, 0.3);
+        box-shadow: 0px 4px 20px 0px rgba(37, 67, 54, 0.3);
+    }
+
+    &:disabled,
+    &.disabled {
+        @apply border-grey-300 bg-grey-300 text-grey-400;
+    }
+
+    &:disabled:active,
+    &.disabled:active,
+    &:disabled:focus,
+    &.disabled:focus {box-shadow: none;}
+
+    &.btn--tertiary {
+        @apply bg-transparent border-brand-2 text-brand-2;
+    
+        &:hover,
+        &:active,
+        &:focus {@apply bg-transparent border-brand-2 text-brand-2;}
+    
+        &:active,
+        &:focus {box-shadow: none;}
+    
+        &:disabled,
+        &.disabled {@apply bg-transparent border-grey-300 text-grey-400;}
+    
+        &:disabled:active,
+        &.disabled:active,
+        &:disabled:focus,
+        &.disabled:focus {box-shadow: none;}
+    }
+
+    &.btn--ghost {
+        @apply bg-transparent border-transparent;
+        @apply text-brand-2;
+    
+        &:hover,
+        &:active,
+        &:focus {
+            @apply bg-transparent border-transparent;
+            @apply text-brand-2;
+        }
+    
+        &:active,
+        &:focus {
+            box-shadow: none;
+        }
+    
+        &:disabled,
+        &.disabled {
+            @apply bg-transparent border-transparent text-grey-400;
+        }
+    
+        &:disabled:hover,
+        &.disabled:hover,
+        &:disabled:active,
+        &.disabled:active,
+        &:disabled:focus,
+        &.disabled:focus {
+            
+            span {@apply no-underline;}
+        }
+    }
+}
+
+//btn more
+.btn.btn-more {
+    @apply relative bg-palette-text border-palette-text rounded-0;
+    @apply mr-8 mb-8 px-32;
+    @apply text-white;
+    overflow: unset;
+
+    .btn-wrp:after {@apply hidden;}
+
+    &:after {
+        @apply absolute top-0 left-0 w-full h-full;
+        box-shadow: rgb(0, 0, 0) 0px 0px 0px 3px;
+        transform: translate3d(8px, 8px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+        content: '';
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+
+        &:after {
+            transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+            transform-style: preserve-3d;
+        }
+    }
+}

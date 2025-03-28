@@ -1,0 +1,21 @@
+{# set varible and send to templates #}
+{% 
+    set seo = {
+        'title' : 'title here',
+        'meta_title' : 'meta title here',
+        'meta_description' : 'meta description here',
+        'meta_url': 'https://www.url.com'
+    }
+%}
+
+{# set the layout template #}
+{% extends "templates/layouts/default.twig" %}
+
+{# content #}
+{% block content %}
+
+    <div class="container">
+        <p>pages about</p>
+    </div>
+
+{% endblock %}

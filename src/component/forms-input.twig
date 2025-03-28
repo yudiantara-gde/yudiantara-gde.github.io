@@ -1,0 +1,47 @@
+{# set varible and send to templates #}
+{% 
+    set seo = {
+        'title' : 'title here',
+        'meta_title' : 'meta title here',
+        'meta_description' : 'meta description here',
+        'meta_url': 'https://www.url.com'
+    }
+%}
+
+{# set the layout template #}
+{% extends "../templates/layouts/component.twig" %}
+
+{# content #}
+{% block content %}
+    <h1 class="visually-hidden">Komponen Form Input</h1>
+    <div class="spancer">
+        <div class="container">
+            <div class="{{ prefix_div }}-paragraph text-primary-02 text-left">
+                <h2><span>Komponen Form Input</span></h2>
+                <p> Komponen form input dalam desain UI (User Interface) merupakan elemen penting yang digunakan untuk mengumpulkan data dari pengguna. Berikut adalah beberapa komponen umum yang sering digunakan dalam form input :</p>
+                <ul style="list-style: disc;">
+                    <li>
+                        <b>Text Field</b> <br />
+                        Digunakan untuk memasukkan teks, baik satu baris maupun multiline. Cocok untuk nama, alamat email, atau informasi lainnya.
+                    </li>
+                    <li>
+                        <b>Password Field</b> <br />
+                        Mirip dengan text field, tetapi menyembunyikan karakter yang dimasukkan untuk meningkatkan keamanan.
+                    </li>
+                    <li>
+                        <b>Penyampaian Prioritas</b><br />
+                        Dengan memisahkan tombol utama dan sekunder melalui gaya yang berbeda, pengguna dapat dengan mudah memahami tindakan mana yang lebih penting dalam antarmuka.
+                    </li>
+                    <li>
+                        <b>Responsif</b><br />
+                        Tombol sekunder tetap harus responsif dan mudah diakses, meskipun tidak menjadi fokus utama. Desain yang baik memastikan bahwa kedua jenis tombol dapat diberikan perhatian yang tepat sesuai konteks penggunaan.
+                    </li>
+                    <li>
+                        <b>Penggunaan yang Konsisten</b><br />
+                        Penggunaan tombol sekunder harus konsisten di seluruh aplikasi atau situs web untuk menjaga pengalaman pengguna yang baik.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

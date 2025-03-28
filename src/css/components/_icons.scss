@@ -1,0 +1,30 @@
+.fa {
+    @apply relative inline-block align-middle;
+    @apply h-24 w-24;
+    @apply font-400 not-italic inherit-color text-center;
+    font-size: _rem(16);
+    line-height: _rem(24);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-variant: normal;
+    text-rendering: auto;
+}
+
+.fa::before {
+    content: " ";
+}
+
+//font family
+.fa--regular {@apply font-faRegular;}
+.fa--solid {@apply font-faSolid;}
+
+//icons
+.fa--facebook-f::before{content: "\f39e";}
+.fa--pinterest-p::before {content: "\f231";}
+.fa--chevron-down::before {content: "\f078";}
+.fa--chevron-up::before {content: "\f077";}
+.fa--chevron-left::before {content: "\f053";}
+.fa--chevron-right::before {content: "\f054";}
+.fa--magnifying-glass::before {content: "\f002";}
+.fa--xmark::before {content: "\f00d";}
+.fa--house::before {content: "\f015";}

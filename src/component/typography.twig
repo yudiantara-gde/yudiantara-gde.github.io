@@ -1,0 +1,147 @@
+{# set varible and send to templates #}
+{% 
+    set seo = {
+        'title' : 'title here',
+        'meta_title' : 'meta title here',
+        'meta_description' : 'meta description here',
+        'meta_url': 'https://www.url.com'
+    }
+%}
+
+{# set the layout template #}
+{% extends "../templates/layouts/component.twig" %}
+
+{# content #}
+{% block content %}
+
+<div class="{{ prefix_div }}-post {{ prefix_div }}-post--single spancer-sm">
+    <div class="{{ prefix_div }}-post-header">
+        <h1>Typhography and Block Style</h1>
+        <div class="{{ prefix_div }}-post-sparator"></div>
+    </div>
+
+    <div class="{{ prefix_div }}-post-media {{ prefix_div }}-post-media--on-top {{ prefix_div }}-paragraph-sm">
+        <figure class="{{ prefix_div }}-media {{ prefix_div }}-media--caption-inside">
+            <a href="../img/content/sample-01.jpg" class="{{ prefix_div }}-popup-image" title="Topview mockup calligraphy"><img src="../img/content/sample-01.jpg" alt="" title=""></a>
+            <figcaption class="{{ prefix_div }}-media-caption">Topview mockup calligraphy with eucalyptus, ink and nibs</figcaption>
+        </figure>
+    </div>
+
+    <div class="{{ prefix_div }}-post-content {{ prefix_div }}-paragraph-sm text-justify text-primary-01">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis massa nec accumsan eleifend. Cras non scelerisque libero. Nullam luctus erat quis neque elementum tincidunt. Donec nec justo erat. Etiam a pretium nisi, eu eleifend ligula. Donec in justo sodales elit pellentesque cursus sed ac dui. Vestibulum malesuada nunc at orci vulputate tincidunt. Aenean blandit, eros a rutrum aliquet, diam arcu dapibus quam, eu fermentum mi mauris at mi. Maecenas facilisis non nulla at tempor. Vivamus odio est, egestas ut condimentum at, euismod ut nisl. Morbi ac arcu faucibus, dictum augue non, lobortis magna. Morbi ultrices lorem mi, ut tristique odio luctus ac. Nunc mattis mi non metus ultrices consectetur. Mauris ut pharetra mauris.</p>
+        <figure class="{{ prefix_div }}-media {{ prefix_div }}-media--caption-inside {{ prefix_div }}-media--wide">
+            <a href="../img/content/sample-02.jpg" class="{{ prefix_div }}-popup-image" title="Topview mockup calligraphy with eucalyptus, ink and nibs"><img src="../img/content/sample-02.jpg" alt="" title=""></a>
+            <figcaption class="{{ prefix_div }}-media-caption">Topview mockup calligraphy with eucalyptus, ink and nibs</figcaption>
+        </figure>
+        <h2>Heading 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <p>Aliquam pulvinar sit amet nunc ut vulputate. Nullam sit amet convallis ante. Phasellus ultrices nisl enim, vulputate tincidunt nisl sollicitudin sit amet. Aenean euismod velit ut metus feugiat, vitae pharetra ex suscipit. Aliquam nec justo tortor. Pellentesque euismod lorem et posuere ornare. Vestibulum scelerisque vitae velit consectetur iaculis. Nam maximus aliquet sapien, a euismod purus. Ut at tempus mauris. Morbi tempus nisl et iaculis commodo. Maecenas sit amet suscipit sem. Sed id magna nunc.</p>
+        <h3>Heading 3</h3>
+        <figure class="{{ prefix_div }}-media {{ prefix_div }}-media--caption-bottom">
+            <a href="../img/content/sample-02.jpg" class="{{ prefix_div }}-popup-image" title="Topview mockup calligraphy with eucalyptus, ink and nibs">
+                <img src="../img/content/sample-02.jpg" alt="" title="">
+            </a>
+            <figcaption class="{{ prefix_div }}-media-caption">Topview mockup calligraphy with eucalyptus, ink and nibs</figcaption>
+        </figure>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <figure class="{{ prefix_div }}-media {{ prefix_div }}-media--wide">
+            <figure class="{{ prefix_div }}-gallery">
+                <figure class="{{ prefix_div }}-media {{ prefix_div }}-media--caption-inside">
+                    <a href="../img/content/sample-01.jpg" class="{{ prefix_div }}-popup-image" title="Topview mockup calligraphy"><img src="../img/content/sample-01.jpg" alt="" title=""></a>
+                    <figcaption class="{{ prefix_div }}-media-caption">Topview mockup calligraphy</figcaption>
+                </figure>
+                <figure class="{{ prefix_div }}-media {{ prefix_div }}-media--caption-inside">
+                    <a href="../img/content/sample-02.jpg" class="{{ prefix_div }}-popup-image" title="Topview mockup calligraphy"><img src="../img/content/sample-02.jpg" alt="" title=""></a>
+                    <figcaption class="{{ prefix_div }}-media-caption">Topview mockup calligraphy</figcaption>
+                </figure>
+                <figure class="{{ prefix_div }}-media {{ prefix_div }}-media--caption-inside">
+                    <a href="../img/content/sample-03.jpg" class="{{ prefix_div }}-popup-image" title="Topview mockup calligraphy"><img src="../img/content/sample-03.jpg" alt="" title=""></a>
+                    <figcaption class="{{ prefix_div }}-media-caption">Topview mockup calligraphy</figcaption>
+                </figure>
+
+                <figcaption class="{{ prefix_div }}-media-caption">Topview mockup calligraphy with eucalyptus, ink and nibs</figcaption>
+            </figure>
+        </figure>
+        <h4>Heading 4</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <h5>Heading 5</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <h6>Heading 6</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <h6>Unorder list</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <ul style="list-style: disc;">
+            <li>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                <ul style="list-style: lower-alpha;">
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</li>
+                    <li>Fusce convallis metus id felis luctus adipiscing.</li>
+                </ul>
+            </li>
+            <li>
+                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</li>
+                    <li>Fusce convallis metus id felis luctus adipiscing.</li>
+                </ol>
+            </li>
+            <li>Fusce convallis metus id felis luctus adipiscing.</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <h6>Order list</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <ol>
+            <li>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                <ul style="list-style: disc;">
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi.</li>
+                </ul>
+            </li>
+            <li>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</li>
+            <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi.
+                <ol>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi.</li>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi.</li>
+                    <li>Fusce convallis metus id felis luctus adipiscing.</li>
+                </ol>
+            </li>
+        </ol>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <h6>Blockquote</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque arcu elit, rutrum eu magna in, consectetur cursus magna. Donec fermentum lectus eu velit rutrum cursus. Ut eu justo aliquam, congue ipsum non, convallis mi. Donec sollicitudin, nibh vitae tincidunt tempor, elit lacus tristique diam, sit amet efficitur massa ligula vitae odio. Duis interdum pretium tellus ac ultrices. Vestibulum vitae nunc sollicitudin, hendrerit felis nec, congue magna. Aenean iaculis vestibulum orci, gravida porttitor est ultrices eu. Proin dapibus porta scelerisque.</p>
+        <blockquote class="{{ prefix_div }}-block-quoto">
+            <p>When you do something noble and beautiful and nobody noticed, do not be sad. For the sun every morning is a beautiful spectacle and yet most of the audience still sleeps.</p>
+            <span>- John Lennon</span>
+        </blockquote>
+    </div>
+
+    <div class="{{ prefix_div }}-post-share">
+        <ul class="{{ prefix_div }}-post-share__list">
+            <li>
+                <a href="" rel="nofollow noopener" target="_blank" class="{{ prefix_div }}-btn-share {{ prefix_div }}-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share on Twitter X">
+					<svg class="{{ prefix_div }}-btn-share__icon {{ prefix_div }}-btn-share__icon--x" viewBox="0 0 16 16">
+						<path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
+					</svg>
+				</a>
+            </li>
+            <li>
+                <a href="" rel="nofollow noopener" target="_blank" class="{{ prefix_div }}-btn-share {{ prefix_div }}-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share on Facebook">
+					<i class="{{ prefix_div }}-btn-share__icon fa fa--facebook-f"></i>
+				</a>
+            </li>
+
+            <li>
+                <a href="" rel="nofollow noopener" target="_blank" class="{{ prefix_div }}-btn-share {{ prefix_div }}-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Share on Pinterest">
+					<i class="{{ prefix_div }}-btn-share__icon fa fa--pinterest-p"></i>
+				</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

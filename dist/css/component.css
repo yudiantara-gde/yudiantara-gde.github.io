@@ -1,0 +1,47 @@
+.bg-gradient-brand {
+  background: rgb(37, 67, 54);
+  background: linear-gradient(159deg, rgb(37, 67, 54) 0%, rgb(64, 190, 125) 100%);
+}
+
+.bg-gradient-shade {
+  background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+}
+
+.pc-button .component-button {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(235 235 235 / var(--tw-border-opacity, 1));
+  padding: 1.5rem;
+}
+.pc-button .component-button .pos-abs {
+  position: absolute;
+  top: -14px;
+  left: 1rem;
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(14 13 53 / var(--tw-text-opacity, 1));
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+@media (min-width: 576px) {
+  .pc-button .component-button .column-flex .cmp {
+    width: 50%;
+  }
+  .pc-button .component-button .column-flex .cmp:last-of-type {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .pc-button .component-button .column-flex .cmp {
+    width: 100%;
+  }
+}
