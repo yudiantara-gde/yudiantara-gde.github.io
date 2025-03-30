@@ -1,0 +1,31 @@
+<header class="{{ prefix_div }}-main-header">
+    <div class="container-max-xl">
+        <div class="{{ prefix_div }}-main-menu">
+            <div class="brand">
+                <a href="index.html">
+                    <img src="img/logo/logo-lg.png" alt="logo" title="logo">
+                </a>
+            </div>
+
+            <nav id="nav" class="hidden lg:block">
+                <ul class="navbar">
+                    {% for nav  in nav_main %}
+                        {# check if nav has class active #}
+                        {% if _class.nav_active is defined and _class.nav_active is same as(nav.slug) %}
+                        <li class="has-active">
+                        {% else %}
+                        <li>
+                        {% endif %} 
+                            {# check if nav has url #}
+                            {% if nav.links !=''  %}
+                                <a href="{{ nav.links }}"> <span>{{ nav.pages }}</span> </a>
+                            {% else %}
+                                <a href="#"> <span>{{ nav.pages }}</span> </a>        
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

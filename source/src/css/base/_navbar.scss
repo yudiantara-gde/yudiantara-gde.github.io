@@ -1,0 +1,128 @@
+//navbar
+.navbar {
+    @apply flex flex-nowrap flex-row gap-x-0;
+    @apply relative z-[2];
+
+    a {
+        @apply relative block overflow-hidden;
+        @apply px-16 py-0;
+        @apply border-t-0;
+        @include vendor('transition', '0.3s ease');
+
+        &:hover,
+        &:active,
+        &.active,
+        &:focus {
+           @apply no-outline;
+        }
+    }
+
+    a.with-child {
+
+        &:after {
+            @apply inline-block align-middle ml-8;
+            width: 24px;
+            height: 24px;
+            @apply font-faSolid not-italic inherit-color text-center no-outline;
+            font-size: _rem(11);
+            line-height: 24px;
+            content: '\f078';
+            @include vendor('transition', '0.3s ease');
+        }
+    }
+
+    a.with-child.active {
+
+        &:after {
+            @include vendor('transform', 'rotate(-180deg)');
+        }
+    }
+
+    li {
+        @apply relative;
+        @apply no-outline;
+        @include vendor('transition', '0.3s ease');
+
+        &:before {
+            @apply hidden absolute left-0 top-0;
+            content: "";
+            width: 4px;
+            height: 8px;
+            @apply border-4 border-solid border-transparent;
+            @include vendor('transition', '0.3s ease');
+        }
+    }
+
+    li.has-child.active {
+
+        &:before {
+            @apply block top-full;
+        }
+    }
+}
+
+.navbar ul {
+    @apply hidden absolute top-full left-0 bg-transparent z-[1];
+    @apply pt-12;
+
+    a {
+        @apply py-12 px-16;
+        @apply border-0;
+
+        &:hover {@apply pl-24;}
+    }
+
+    a.with-child {
+        @apply pr-32;
+
+        &:after {
+            position: absolute;
+            top: 50%;
+            right: _rem(8);
+            margin-left: 0;
+            margin-top: -12px;
+            @include vendor('transform', 'rotate(-90deg)');
+            @include vendor('transition', '0.3s ease');
+        }
+
+        &:before {
+            @apply left-auto;
+            right: -12px;
+            top: 50%;
+            margin-top: -6px;
+            @include vendor('transform', 'rotate(-90deg)');
+        }
+    }
+
+    a.with-child.active {
+        @apply pr-16 pl-24;
+
+        &:after {
+            overflow: hidden;
+            right: _rem(-32);
+            @include vendor('transform', 'rotate(-90deg)');
+        }
+    }
+
+    li {
+        
+        &:before {
+            top: 50% !important;
+            margin-top: _rem(-4);
+            @apply left-auto right-0;
+            @apply border-t-transparent;
+        }
+    }
+
+    li.has-child.active {
+
+        &:before {
+            right: _rem(-8);
+        }
+    }
+}
+
+.navbar ul ul {
+    @apply left-full top-0;
+    @apply pt-0 pl-12;
+}

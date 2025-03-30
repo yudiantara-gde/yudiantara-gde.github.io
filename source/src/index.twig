@@ -1,0 +1,103 @@
+{# set for seo #}
+{% 
+    set seo = {
+        'title' : 'title here',
+        'meta_title' : 'meta title here',
+        'meta_description' : 'meta description here',
+        'meta_url': 'https://www.url.com'
+    }
+%}
+
+{# set class on #}
+{%
+    set _class = {
+        'body'  : '',
+        'main'  : '',
+        'nav_active': 'home',
+        'header': '',
+        'footer': '',
+    }
+%}
+
+{# set yes if packages load on pages #}
+{% 
+    set _cssjs = {
+        'swiper': '',
+        'swiper_type': [''],
+        'select2': '',
+        'gallery': '',
+        'pages': [''],
+    }
+%}
+
+{# set the layout template #}
+{% extends "templates/layouts/default.twig" %}
+
+{# content #}
+{% block content %}
+    {# heroes #}
+    <div class="{{ prefix_div }}-heroes">
+        <div class="{{ prefix_div }}-heroes-wrp {{ prefix_div }}-heroes-pallate-01">
+            <div class="container-max-xl spancer">
+                <h1>Hello {Client Name}, <a href="" class="with-color"><span>I’m Gde</span></a>, i'm <a href="" class="with-color"><span>Web Designer</span></a> and <a href="" class="with-color"><span>Webflow Developer</span></a></h1>
+                <p>I design and build beautiful websites for businesses around the globe. If you need a modern and powerful website, send me an email. If we are a good fit, I will give you a time and cost estimate.</p>
+                <a class="btn btn-more btn-inline">
+                    <div class="btn-wrp">
+                        <span>see my work</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {# latest works #}
+    <div class="spancer">
+        <div class="container-max-xl">
+            <div id="lastest-works" class="grid grid-cols-1 gap-y-48 md:gap-y-56 lg:gap-y-64">
+                {% for works  in projects %}
+                    {% if works.show_on_home is defined and works.show_on_home is same as('yes') %}
+                    <div class="card-works">
+                        <div class="card-wrp">
+                            <div class="card-body">
+                                <span class="label">lastest work</span>
+
+                                <h2>{{ works.name }}</h2>
+
+                                {% if works.tags_ != '' %}
+                                <div class="card-tags mt-24 md:mt-32">
+                                    {% for the_tags in works.tags_ %}
+                                        <span>{{ the_tags.tags_name }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+
+                                <div class="card-thumbsnail mt-24 block md:hidden">
+                                    <a href="">
+                                        <img src="./img/content/{{ works.thumbsnail }}" alt="{{ works.name }}" title="{{ works.name }}">
+                                    </a>
+                                </div>
+
+                                <div class="card-information {{ prefix_div }}-paragraph-sm text-palette-text text-left mt-24 md:mt-32">
+                                    <p>{{ works.description }}</p>
+                                </div>
+                                <div class="card-action block mt-32 text-left md:mt-48">
+                                    <a class="btn btn-more btn-inline" href="works/{{ works.url }}">
+                                        <div class="btn-wrp">
+                                            <span>see this project</span>
+                                        </div>
+                                    </a> 
+                                </div>
+                            </div>
+                            <div class="card-thumbsnail hidden md:block">
+                                <a href="">
+                                    <img src="./img/content/{{ works.thumbsnail }}" alt="{{ works.name }}" title="{{ works.name }}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

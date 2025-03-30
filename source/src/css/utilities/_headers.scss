@@ -1,0 +1,60 @@
+.#{$prefix-class}main-header {
+    @apply absolute top-16 left-16 w-[calc(100%_-_2rem)] bg-transparent z-10;
+    @include vendor('transition', '0.3s ease-out');
+
+    .brand {
+
+        a {
+            @apply block py-16;
+
+            img {
+                @apply block max-w-[unset] w-auto h-[16px];
+            }
+        }
+    }
+
+    .navbar {
+        @apply gap-x-8;
+
+        a {
+            font-size: _rem(12);
+            line-height: _rem(24);
+            @apply font-800 text-palette-text no-underline tracking-[2px] uppercase;
+            @apply px-8 py-12;
+
+            span {
+                @apply relative z-[2];
+                @apply inherit-font inherit-weight inherit-size inherit-leading inherit-tracking inherit-align inherit-color;
+            }
+    
+            &:before {
+                @apply opacity-0 absolute top-24 right-0 w-[95%] h-[16px] bg-palette-highlight;
+                content: '';
+            }
+        }
+
+        li.has-active,
+        li:hover {
+
+            a:before {@apply opacity-100;}
+        }
+    }
+
+    .navbar ul {
+
+        li {
+
+            a:before {@apply hidden;}
+        }
+    }
+
+    .#{$prefix-class}main-menu {
+        @apply w-full flex justify-between;
+    }
+}
+
+
+@screen lg {
+    
+    
+}
