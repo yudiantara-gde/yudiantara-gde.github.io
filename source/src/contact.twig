@@ -1,0 +1,39 @@
+{# set for seo #}
+{% 
+    set seo = {
+        'title' : 'title here',
+        'meta_title' : 'meta title here',
+        'meta_description' : 'meta description here',
+        'meta_url': 'https://www.url.com'
+    }
+%}
+
+{# set class on #}
+{%
+    set _class = {
+        'body'  : '',
+        'main'  : '',
+        'nav_active': 'contact',
+        'header': '',
+        'footer': '',
+    }
+%}
+
+{# set yes if packages load on pages #}
+{% 
+    set _cssjs = {
+        'swiper': '',
+        'swiper_type': [''],
+        'select2': '',
+        'gallery': '',
+        'pages': [''],
+    }
+%}
+
+{# set the layout template #}
+{% extends "templates/layouts/default.twig" %}
+
+{# content #}
+{% block content %}
+    
+{% endblock %}
